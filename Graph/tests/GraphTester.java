@@ -178,10 +178,18 @@ public class GraphTester {
         assertEquals(3, _testDirGraph.getEdgeWeight("Dance", "Jedi"));
 
         _testUndirGraph.addEdge("Jedi", "Party", 5);
+
+        assertTrue(_testUndirGraph.edgeExists("Jedi", "Party"));
+        assertTrue(_testUndirGraph.edgeExists("Party", "Jedi"));
+
         _testUndirGraph.addEdge("Party", "Jedi", 2);
+
+        assertTrue(_testUndirGraph.edgeExists("Jedi", "Party"));
+        assertTrue(_testUndirGraph.edgeExists("Party", "Jedi"));
+
         _testUndirGraph.addEdge("Dance", "Jedi", 3);
 
-        assertEquals(2,_testUndirGraph.getEdgeWeight("Jedi","Party"));
+        assertEquals(2, _testUndirGraph.getEdgeWeight("Jedi","Party"));
         assertEquals(2, _testUndirGraph.getEdgeWeight("Party", "Jedi"));
         assertEquals(3, _testUndirGraph.getEdgeWeight("Dance", "Jedi"));
     }
