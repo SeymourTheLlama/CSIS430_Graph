@@ -220,8 +220,22 @@ public class GraphTester {
     }
 
     @Test
-    public void testToString() {
+    public void testPathLength() {
 
+    }
+
+
+    @Test
+    public void testToString() {
+        //System.out.println(_testDirGraph.toString());
+        //System.out.println(_testUndirGraph.toString());
+
+        testFillGraph(_testDirGraph);
+        testFillGraph(_testUndirGraph);
+
+        System.out.println(_testDirGraph.toString());
+        System.out.println();
+        System.out.println(_testUndirGraph.toString());
     }
 
     // ADD DUPLICATE VERTICES

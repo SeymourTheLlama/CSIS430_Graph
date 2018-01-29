@@ -1,7 +1,5 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.NoSuchElementException;
+import java.io.IOException;
+import java.util.*;
 
 /**
  * Simple templated graph with some basic functionality, such as adding and
@@ -11,9 +9,8 @@ import java.util.NoSuchElementException;
  * @param <T>
  */
 public class Graph<T> {
-    // private variables
-    HashMap<T, HashMap<T, Integer>> _graph;
-    boolean _isDirected;
+    private HashMap<T, HashMap<T, Integer>> _graph;
+    private boolean _isDirected;
 
     /**
      * Constructs either a directed or undirected graph. If the graph is
@@ -49,9 +46,13 @@ public class Graph<T> {
      * @return integer weight of the given edge, or -1 if it does not exist
      */
     public int getEdgeWeight(T source, T destination) {
-        int returnWeight = -1;
+        final int NONEXISTENT_EDGE = -1;
+        int returnWeight = NONEXISTENT_EDGE;
 
+        // get the edge's weight if it exists. Since undirected graphs only
+        // store one side
         if (edgeExists(source, destination)) {
+            // if the graph is directed, or the
             if (_isDirected || _graph.get(source).containsKey(destination)) {
                 returnWeight = _graph.get(source).get(destination);
             }
@@ -74,9 +75,7 @@ public class Graph<T> {
     public boolean edgeExists(T source, T destination) {
         boolean edgeExists = false;
 
-        // CHECK BOTH DIRECTIONS IF UNDIRECTED, otherwise normal
-
-        // both vertices exist
+        // check to ensure that both vertices exist
         if (_graph.containsKey(source) && _graph.containsKey(destination)) {
             // if there is an edge from source to destination, the edge exists
             if (_graph.get(source).containsKey(destination)) {
@@ -91,40 +90,31 @@ public class Graph<T> {
                 }
             }
         }
-
-//        if (_graph.containsKey(source) && _graph.containsKey(destination)) {
-//            // edge exists
-//            if (_graph.get(source).containsKey(destination)) {
-//                // edge isn't a reference
-//                if (getEdgeWeight(source, destination) > 0) {
-//                    edgeExists = true;
-//                }
-//            }
-//        }
-
         return edgeExists;
     }
 
 
     /**
      * Add a vertex to the graph. This new vertex will be unconnected to
-     * every edge. Nulls are not accepted as new vertices.
+     * every edge. Nulls are not accepted as new vertices. Redundant adds
+     * will be rejected.
      *
      * @param vertex Object of type T to serve as a vertex
      * @throws IllegalArgumentException if a null is provided as the vertex,
      * or if a duplicate vertex is added.
      */
     public void addVertex(T vertex) throws IllegalArgumentException {
+        // if the vertex is null, throw an exception
         if (vertex == null) {
             throw new IllegalArgumentException();
         }
+        // if the graph already contains the vertex, throw an exception
         else if (_graph.containsKey(vertex)) {
             throw new IllegalArgumentException();
         }
 
-        // add vertex to the uber-hashMap
+        // add vertex to the first level of hashMap
         _graph.put(vertex, new HashMap<>());
-        // it will sit there with an empty hashmap, b/c it has no edges
     }
 
 
@@ -136,34 +126,24 @@ public class Graph<T> {
      * @throws NoSuchElementException if the vertex is not found in the graph
      */
     public void removeVertex(T vertex) throws NoSuchElementException {
-        // remove the vertex, with all its edges (can't do otherwise, really)
-        // go through every vertex and remove the vertex from their interior
-        // hashmaps
+        // if vertex not in graph, throw exception
         if (!_graph.containsKey(vertex)) {
             throw new NoSuchElementException();
         }
-        else {
-            // check every vertex to see if it has an edge going to this vertex
-            for (T source : _graph.keySet()) {
-                // checks the vertex's hashMap of edges to see if any connect
-                // to the vertex we are removing
-                if (_graph.get(source).containsKey(vertex)) {
-                    // removes the edge
-                    removeEdge(source, vertex);
-                }
-            }
-//
-//
-//            // trace back from the edges that are connected to this vertex
-//            for (T destination : _graph.get(vertex).keySet()) {
-//                // remove the edges that connect to the vertex
-//                removeEdge(destination, vertex);
-//            }
 
-            // remove the vertex itself, along with any edges originating
-            // from it
-            _graph.remove(vertex);
+        // check every vertex to see if it has an edge going to this vertex
+        for (T source : _graph.keySet()) {
+            // checks the vertex's hashMap of edges to see if any connect
+            // to the vertex we are removing
+            if (_graph.get(source).containsKey(vertex)) {
+                // removes the edge
+                removeEdge(source, vertex);
+            }
         }
+
+        // remove the vertex itself, along with any edges originating
+        // from it
+        _graph.remove(vertex);
     }
 
 
@@ -183,8 +163,8 @@ public class Graph<T> {
     public void addEdge(T source, T destination, int weight)
             throws IllegalArgumentException, NoSuchElementException {
 
-        // if the weight is less than one or this would be a loop, throw an
-        // exception
+        // if this would be a loop or the source or destination is null,
+        // throw an exception
         if (source == null || destination == null
                 || source.equals(destination)) {
             throw new IllegalArgumentException();
@@ -214,33 +194,6 @@ public class Graph<T> {
                 _graph.get(source).replace(destination, weight);
             }
         }
-
-//        if (!edgeExists(source, destination)) {
-//            // add an entry to the edge hashMap corresponding to the source
-//            // vertex
-//            _graph.get(source).put(destination, weight);
-//
-//            if (!edgeExists(destination, source)) {
-//                if (_isDirected) {
-//                    // add an entry to the destination's hashMap to show that there
-//                    // is an edge connecting to it
-//                    _graph.get(destination).put(source, -1);
-//                } else {
-//                    // undirected graphs require duplicates from destination to source
-//                    _graph.get(destination).put(source, weight);
-//                }
-//            }
-//        }
-//        else {
-//            // update the weight
-//            _graph.get(source).replace(destination, weight);
-//
-//            // if undirected, the weight must be updated from destination to
-//            // source as well.
-//            if (!_isDirected) {
-//                _graph.get(destination).replace(source, weight);
-//            }
-//        }
     }
 
 
@@ -256,13 +209,16 @@ public class Graph<T> {
     public void removeEdge(T source, T destination) throws
             NoSuchElementException {
 
+        // if the graph doesn't contain the source, destination, or edge
+        // between them, throw an exception
         if (!_graph.containsKey(source) || !_graph.containsKey(destination)
                 || !edgeExists(source, destination)) {
             throw new NoSuchElementException();
         }
 
-        // remove destination vertex from source in base hashMap. Vice-versa
-        // as well if undirected.
+        // remove destination vertex from source in base hashMap. If
+        // undirected, check the other direction to remove that one (since we
+        // know the edge exists, it must be in one or the other)
         if (_isDirected || _graph.get(source).containsKey(destination)) {
             _graph.get(source).remove(destination);
         }
@@ -273,12 +229,110 @@ public class Graph<T> {
 
 
     /**
+     * Returns the length of the given set of vertices if they are a path
+     * through the graph. If they are not a path or the list an empty, then
+     * this returns -1.
+     *
+     * @param pathList
+     * @return
+     */
+    public long pathLength(List<T> pathList) {
+        return 0;
+    }
+
+
+    /**
+     * Finds the shortest path between the source and the destination
+     * vertices. Returns null if no path exists.
+     *
+     * @param source
+     * @param destination
+     * @return
+     * @throws NoSuchElementException
+     */
+    public List<Edge<T>> shortestPathBetween(T source, T destination) throws NoSuchElementException {
+        return null;
+    }
+
+
+    /**
+     *
+     * @param isDirected
+     * @param inputFile
+     * @return
+     * @throws IOException
+     */
+    public static Graph<String> fromCSVFile(boolean isDirected, Scanner inputFile) throws IOException {
+        return null;
+    }
+
+
+    /**
      * String representation of the graph.
      *
      * @return representation of graph in string form
      */
     public String toString() {
-        // will always be O(n) unless HashMap has super fancy functions
-        return null;
+        return _graph.toString();
+    }
+
+    public static class Edge<E> {
+        private E _source;
+        private E _destination;
+        private int _weight;
+
+        /**
+         * Constructs an edge.
+         *
+         * @param source source vertex of the edge
+         * @param destination destination vertex of the edge
+         * @param weight weight of the edge
+         */
+        public Edge(E source, E destination, int weight) {
+            _source = source;
+            _destination = destination;
+            _weight = weight;
+        }
+
+
+        /**
+         * returns the weight of the edge.
+         *
+         * @return weight of the edge.
+         */
+        public int getWeight() {
+            return _weight;
+        }
+
+
+        /**
+         * returns the source vertex of the edge.
+         *
+         * @return the source vertex of the edge.
+         */
+        public E getSource() {
+            return _source;
+        }
+
+
+        /**
+         * returns the destination vertex of the edge.
+         *
+         * @return destination vertex of the edge.
+         */
+        public E getDestination() {
+            return _destination;
+        }
+
+
+        /**
+         * string representation of the edge
+         *
+         * @return a string representation of the edge
+         */
+        public String toString() {
+            return String.format("<%s, %s;  %d>",
+                    _source.toString(), _destination.toString(), _weight);
+        }
     }
 }
