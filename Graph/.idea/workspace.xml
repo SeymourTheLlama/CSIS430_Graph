@@ -15,22 +15,22 @@
       <file leaf-file-name="Graph.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Graph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="105" column="18" lean-forward="false" selection-start-line="105" selection-start-column="18" selection-end-line="105" selection-end-column="18" />
+            <state relative-caret-position="-969">
+              <caret line="165" column="17" lean-forward="false" selection-start-line="165" selection-start-column="17" selection-end-line="165" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1008#1009#0" expanded="true" />
                 <element signature="e#1063#1064#0" expanded="true" />
-                <element signature="e#8560#8561#0" expanded="true" />
-                <element signature="e#8584#8585#0" expanded="true" />
-                <element signature="e#9357#9358#0" expanded="true" />
-                <element signature="e#9397#9398#0" expanded="true" />
-                <element signature="e#10064#10065#0" expanded="true" />
-                <element signature="e#10102#10103#0" expanded="true" />
-                <element signature="e#10270#10271#0" expanded="true" />
-                <element signature="e#10308#10309#0" expanded="true" />
-                <element signature="e#10487#10488#0" expanded="true" />
-                <element signature="e#10530#10531#0" expanded="true" />
+                <element signature="e#7694#7695#0" expanded="true" />
+                <element signature="e#7718#7719#0" expanded="true" />
+                <element signature="e#8491#8492#0" expanded="true" />
+                <element signature="e#8531#8532#0" expanded="true" />
+                <element signature="e#9199#9200#0" expanded="true" />
+                <element signature="e#9237#9238#0" expanded="true" />
+                <element signature="e#9405#9406#0" expanded="true" />
+                <element signature="e#9443#9444#0" expanded="true" />
+                <element signature="e#9622#9623#0" expanded="true" />
+                <element signature="e#9665#9666#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -39,8 +39,8 @@
       <file leaf-file-name="GraphTester.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/GraphTester.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="223" column="0" lean-forward="false" selection-start-line="223" selection-start-column="0" selection-end-line="223" selection-end-column="0" />
+            <state relative-caret-position="178">
+              <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#424#425#0" expanded="true" />
@@ -49,9 +49,6 @@
                 <element signature="e#570#571#0" expanded="true" />
                 <element signature="e#623#624#0" expanded="true" />
                 <element signature="e#672#673#0" expanded="true" />
-                <element signature="method#testAddEdgesUndir#0;class#GraphTester#0" expanded="false" />
-                <element signature="method#testRemoveEdgesDir#0;class#GraphTester#0" expanded="false" />
-                <element signature="method#testRemoveEdgesUndir#0;class#GraphTester#0" expanded="false" />
                 <element signature="method#testGettingEdgeWeight#0;class#GraphTester#0" expanded="false" />
                 <element signature="method#testToString#0;class#GraphTester#0" expanded="false" />
                 <element signature="method#testAddVertices#0;class#GraphTester#0" expanded="false" />
@@ -85,8 +82,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/GraphTester.java" />
-        <option value="$PROJECT_DIR$/src/Graph.java" />
         <option value="$PROJECT_DIR$/tests/GraphTester.java" />
+        <option value="$PROJECT_DIR$/src/Graph.java" />
       </list>
     </option>
   </component>
@@ -111,8 +108,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -135,7 +132,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -290,12 +287,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GraphTester - 2018.01.21 at 14h 24m 12s.xml">
-      <configuration name="GraphTester" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="GraphTester - 2018.01.21 at 14h 24m 46s.xml">
-      <configuration name="GraphTester" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="GraphTester - 2018.01.21 at 14h 27m 13s.xml">
       <configuration name="GraphTester" configurationId="JUnit" />
     </history-entry>
@@ -320,10 +311,15 @@
     <history-entry file="GraphTester - 2018.01.28 at 15h 09m 13s.xml">
       <configuration name="GraphTester" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="GraphTester - 2018.01.29 at 18h 26m 41s.xml">
+      <configuration name="GraphTester" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GraphTester - 2018.01.29 at 18h 28m 23s.xml">
+      <configuration name="GraphTester" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="895" y="0" width="916" height="981" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -333,8 +329,8 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -343,8 +339,8 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -393,16 +389,61 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1008#1009#0" expanded="true" />
             <element signature="e#1063#1064#0" expanded="true" />
-            <element signature="e#8560#8561#0" expanded="true" />
-            <element signature="e#8584#8585#0" expanded="true" />
-            <element signature="e#9357#9358#0" expanded="true" />
-            <element signature="e#9397#9398#0" expanded="true" />
-            <element signature="e#10064#10065#0" expanded="true" />
-            <element signature="e#10102#10103#0" expanded="true" />
-            <element signature="e#10270#10271#0" expanded="true" />
-            <element signature="e#10308#10309#0" expanded="true" />
-            <element signature="e#10487#10488#0" expanded="true" />
-            <element signature="e#10530#10531#0" expanded="true" />
+            <element signature="e#7694#7695#0" expanded="true" />
+            <element signature="e#7718#7719#0" expanded="true" />
+            <element signature="e#8491#8492#0" expanded="true" />
+            <element signature="e#8531#8532#0" expanded="true" />
+            <element signature="e#9199#9200#0" expanded="true" />
+            <element signature="e#9237#9238#0" expanded="true" />
+            <element signature="e#9405#9406#0" expanded="true" />
+            <element signature="e#9443#9444#0" expanded="true" />
+            <element signature="e#9622#9623#0" expanded="true" />
+            <element signature="e#9665#9666#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/GraphTester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3791">
+          <caret line="223" column="0" lean-forward="false" selection-start-line="223" selection-start-column="0" selection-end-line="223" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#424#425#0" expanded="true" />
+            <element signature="e#470#471#0" expanded="true" />
+            <element signature="e#522#523#0" expanded="true" />
+            <element signature="e#570#571#0" expanded="true" />
+            <element signature="e#623#624#0" expanded="true" />
+            <element signature="e#672#673#0" expanded="true" />
+            <element signature="method#testGettingEdgeWeight#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testToString#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddVertices#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveVertices#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddEdges#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveEdges#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testFillGraph#0;class#GraphTester#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1008#1009#0" expanded="true" />
+            <element signature="e#1063#1064#0" expanded="true" />
+            <element signature="e#7694#7695#0" expanded="true" />
+            <element signature="e#7718#7719#0" expanded="true" />
+            <element signature="e#8491#8492#0" expanded="true" />
+            <element signature="e#8531#8532#0" expanded="true" />
+            <element signature="e#9199#9200#0" expanded="true" />
+            <element signature="e#9237#9238#0" expanded="true" />
+            <element signature="e#9405#9406#0" expanded="true" />
+            <element signature="e#9443#9444#0" expanded="true" />
+            <element signature="e#9622#9623#0" expanded="true" />
+            <element signature="e#9665#9666#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -419,9 +460,6 @@
             <element signature="e#570#571#0" expanded="true" />
             <element signature="e#623#624#0" expanded="true" />
             <element signature="e#672#673#0" expanded="true" />
-            <element signature="method#testAddEdgesUndir#0;class#GraphTester#0" expanded="false" />
-            <element signature="method#testRemoveEdgesDir#0;class#GraphTester#0" expanded="false" />
-            <element signature="method#testRemoveEdgesUndir#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testGettingEdgeWeight#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testToString#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testAddVertices#0;class#GraphTester#0" expanded="false" />
@@ -437,82 +475,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5508">
           <caret line="333" column="0" lean-forward="false" selection-start-line="333" selection-start-column="0" selection-end-line="333" selection-end-column="0" />
-          <folding>
-            <marker date="1511791702000" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1511791702000" expanded="false" signature="133:343" ph="..." />
-            <marker date="1511791702000" expanded="true" signature="390:397" ph="{}" />
-            <marker date="1511791702000" expanded="true" signature="468:539" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="594:646" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="718:766" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="822:875" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="921:1073" ph="{...}" />
-            <marker date="1511791702000" expanded="false" signature="1104:1115" ph=" { " />
-            <marker date="1511791702000" expanded="false" signature="1134:1140" ph=" }" />
-            <marker date="1511791702000" expanded="true" signature="1226:1627" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="1708:1856" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="1926:1973" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="2043:2120" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="2211:2325" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="2400:2466" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="2534:2760" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="2847:2942" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="3013:3079" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="3184:3304" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="3393:3466" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="3552:3625" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="3752:3817" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="3898:3986" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="4115:4180" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="4263:4353" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="4476:4541" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="4618:4702" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="4825:4890" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="4967:5051" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="5176:5241" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="5320:5406" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="5527:5592" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="5667:5749" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="5872:5937" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="6014:6098" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="6239:6335" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="6430:6505" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="6643:6739" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="6831:6906" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="7032:7121" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="7221:7351" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="7448:7577" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="7679:7798" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="7881:8030" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="8109:8257" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="8323:8384" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="8466:8572" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="8578:8596" ph="/**...*/" />
-            <marker date="1511791702000" expanded="true" signature="8681:8742" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="8748:8766" ph="/**...*/" />
-            <marker date="1511791702000" expanded="true" signature="8867:8967" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="9051:9119" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="9200:9268" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="9338:9390" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="9444:9496" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="9563:9652" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="9703:9752" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="9821:10009" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="10093:10196" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="10264:10323" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="10412:10497" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="10570:10634" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="10685:10851" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="10937:11143" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="11231:11287" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="11362:11883" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="11965:12104" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="12110:12128" ph="/**...*/" />
-            <marker date="1511791702000" expanded="true" signature="12235:12298" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="12304:12322" ph="/**...*/" />
-            <marker date="1511791702000" expanded="true" signature="12413:12467" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="12545:12593" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="12686:12752" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -524,16 +486,16 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1008#1009#0" expanded="true" />
             <element signature="e#1063#1064#0" expanded="true" />
-            <element signature="e#8560#8561#0" expanded="true" />
-            <element signature="e#8584#8585#0" expanded="true" />
-            <element signature="e#9357#9358#0" expanded="true" />
-            <element signature="e#9397#9398#0" expanded="true" />
-            <element signature="e#10064#10065#0" expanded="true" />
-            <element signature="e#10102#10103#0" expanded="true" />
-            <element signature="e#10270#10271#0" expanded="true" />
-            <element signature="e#10308#10309#0" expanded="true" />
-            <element signature="e#10487#10488#0" expanded="true" />
-            <element signature="e#10530#10531#0" expanded="true" />
+            <element signature="e#7694#7695#0" expanded="true" />
+            <element signature="e#7718#7719#0" expanded="true" />
+            <element signature="e#8491#8492#0" expanded="true" />
+            <element signature="e#8531#8532#0" expanded="true" />
+            <element signature="e#9199#9200#0" expanded="true" />
+            <element signature="e#9237#9238#0" expanded="true" />
+            <element signature="e#9405#9406#0" expanded="true" />
+            <element signature="e#9443#9444#0" expanded="true" />
+            <element signature="e#9622#9623#0" expanded="true" />
+            <element signature="e#9665#9666#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -550,9 +512,6 @@
             <element signature="e#570#571#0" expanded="true" />
             <element signature="e#623#624#0" expanded="true" />
             <element signature="e#672#673#0" expanded="true" />
-            <element signature="method#testAddEdgesUndir#0;class#GraphTester#0" expanded="false" />
-            <element signature="method#testRemoveEdgesDir#0;class#GraphTester#0" expanded="false" />
-            <element signature="method#testRemoveEdgesUndir#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testGettingEdgeWeight#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testToString#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testAddVertices#0;class#GraphTester#0" expanded="false" />
@@ -568,82 +527,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5508">
           <caret line="333" column="0" lean-forward="false" selection-start-line="333" selection-start-column="0" selection-end-line="333" selection-end-column="0" />
-          <folding>
-            <marker date="1511791702000" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1511791702000" expanded="false" signature="133:343" ph="..." />
-            <marker date="1511791702000" expanded="true" signature="390:397" ph="{}" />
-            <marker date="1511791702000" expanded="true" signature="468:539" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="594:646" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="718:766" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="822:875" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="921:1073" ph="{...}" />
-            <marker date="1511791702000" expanded="false" signature="1104:1115" ph=" { " />
-            <marker date="1511791702000" expanded="false" signature="1134:1140" ph=" }" />
-            <marker date="1511791702000" expanded="true" signature="1226:1627" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="1708:1856" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="1926:1973" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="2043:2120" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="2211:2325" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="2400:2466" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="2534:2760" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="2847:2942" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="3013:3079" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="3184:3304" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="3393:3466" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="3552:3625" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="3752:3817" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="3898:3986" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="4115:4180" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="4263:4353" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="4476:4541" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="4618:4702" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="4825:4890" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="4967:5051" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="5176:5241" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="5320:5406" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="5527:5592" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="5667:5749" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="5872:5937" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="6014:6098" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="6239:6335" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="6430:6505" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="6643:6739" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="6831:6906" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="7032:7121" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="7221:7351" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="7448:7577" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="7679:7798" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="7881:8030" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="8109:8257" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="8323:8384" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="8466:8572" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="8578:8596" ph="/**...*/" />
-            <marker date="1511791702000" expanded="true" signature="8681:8742" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="8748:8766" ph="/**...*/" />
-            <marker date="1511791702000" expanded="true" signature="8867:8967" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="9051:9119" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="9200:9268" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="9338:9390" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="9444:9496" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="9563:9652" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="9703:9752" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="9821:10009" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="10093:10196" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="10264:10323" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="10412:10497" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="10570:10634" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="10685:10851" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="10937:11143" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="11231:11287" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="11362:11883" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="11965:12104" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="12110:12128" ph="/**...*/" />
-            <marker date="1511791702000" expanded="true" signature="12235:12298" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="12304:12322" ph="/**...*/" />
-            <marker date="1511791702000" expanded="true" signature="12413:12467" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="12545:12593" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="12686:12752" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -655,16 +538,16 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1008#1009#0" expanded="true" />
             <element signature="e#1063#1064#0" expanded="true" />
-            <element signature="e#8560#8561#0" expanded="true" />
-            <element signature="e#8584#8585#0" expanded="true" />
-            <element signature="e#9357#9358#0" expanded="true" />
-            <element signature="e#9397#9398#0" expanded="true" />
-            <element signature="e#10064#10065#0" expanded="true" />
-            <element signature="e#10102#10103#0" expanded="true" />
-            <element signature="e#10270#10271#0" expanded="true" />
-            <element signature="e#10308#10309#0" expanded="true" />
-            <element signature="e#10487#10488#0" expanded="true" />
-            <element signature="e#10530#10531#0" expanded="true" />
+            <element signature="e#7694#7695#0" expanded="true" />
+            <element signature="e#7718#7719#0" expanded="true" />
+            <element signature="e#8491#8492#0" expanded="true" />
+            <element signature="e#8531#8532#0" expanded="true" />
+            <element signature="e#9199#9200#0" expanded="true" />
+            <element signature="e#9237#9238#0" expanded="true" />
+            <element signature="e#9405#9406#0" expanded="true" />
+            <element signature="e#9443#9444#0" expanded="true" />
+            <element signature="e#9622#9623#0" expanded="true" />
+            <element signature="e#9665#9666#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -681,9 +564,6 @@
             <element signature="e#570#571#0" expanded="true" />
             <element signature="e#623#624#0" expanded="true" />
             <element signature="e#672#673#0" expanded="true" />
-            <element signature="method#testAddEdgesUndir#0;class#GraphTester#0" expanded="false" />
-            <element signature="method#testRemoveEdgesDir#0;class#GraphTester#0" expanded="false" />
-            <element signature="method#testRemoveEdgesUndir#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testGettingEdgeWeight#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testToString#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testAddVertices#0;class#GraphTester#0" expanded="false" />
@@ -699,82 +579,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5508">
           <caret line="333" column="0" lean-forward="false" selection-start-line="333" selection-start-column="0" selection-end-line="333" selection-end-column="0" />
-          <folding>
-            <marker date="1511791702000" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1511791702000" expanded="false" signature="133:343" ph="..." />
-            <marker date="1511791702000" expanded="true" signature="390:397" ph="{}" />
-            <marker date="1511791702000" expanded="true" signature="468:539" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="594:646" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="718:766" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="822:875" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="921:1073" ph="{...}" />
-            <marker date="1511791702000" expanded="false" signature="1104:1115" ph=" { " />
-            <marker date="1511791702000" expanded="false" signature="1134:1140" ph=" }" />
-            <marker date="1511791702000" expanded="true" signature="1226:1627" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="1708:1856" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="1926:1973" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="2043:2120" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="2211:2325" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="2400:2466" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="2534:2760" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="2847:2942" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="3013:3079" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="3184:3304" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="3393:3466" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="3552:3625" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="3752:3817" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="3898:3986" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="4115:4180" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="4263:4353" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="4476:4541" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="4618:4702" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="4825:4890" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="4967:5051" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="5176:5241" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="5320:5406" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="5527:5592" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="5667:5749" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="5872:5937" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="6014:6098" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="6239:6335" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="6430:6505" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="6643:6739" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="6831:6906" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="7032:7121" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="7221:7351" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="7448:7577" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="7679:7798" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="7881:8030" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="8109:8257" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="8323:8384" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="8466:8572" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="8578:8596" ph="/**...*/" />
-            <marker date="1511791702000" expanded="true" signature="8681:8742" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="8748:8766" ph="/**...*/" />
-            <marker date="1511791702000" expanded="true" signature="8867:8967" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="9051:9119" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="9200:9268" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="9338:9390" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="9444:9496" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="9563:9652" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="9703:9752" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="9821:10009" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="10093:10196" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="10264:10323" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="10412:10497" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="10570:10634" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="10685:10851" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="10937:11143" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="11231:11287" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="11362:11883" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="11965:12104" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="12110:12128" ph="/**...*/" />
-            <marker date="1511791702000" expanded="true" signature="12235:12298" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="12304:12322" ph="/**...*/" />
-            <marker date="1511791702000" expanded="true" signature="12413:12467" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="12545:12593" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="12686:12752" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -786,16 +590,16 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1008#1009#0" expanded="true" />
             <element signature="e#1063#1064#0" expanded="true" />
-            <element signature="e#8560#8561#0" expanded="true" />
-            <element signature="e#8584#8585#0" expanded="true" />
-            <element signature="e#9357#9358#0" expanded="true" />
-            <element signature="e#9397#9398#0" expanded="true" />
-            <element signature="e#10064#10065#0" expanded="true" />
-            <element signature="e#10102#10103#0" expanded="true" />
-            <element signature="e#10270#10271#0" expanded="true" />
-            <element signature="e#10308#10309#0" expanded="true" />
-            <element signature="e#10487#10488#0" expanded="true" />
-            <element signature="e#10530#10531#0" expanded="true" />
+            <element signature="e#7694#7695#0" expanded="true" />
+            <element signature="e#7718#7719#0" expanded="true" />
+            <element signature="e#8491#8492#0" expanded="true" />
+            <element signature="e#8531#8532#0" expanded="true" />
+            <element signature="e#9199#9200#0" expanded="true" />
+            <element signature="e#9237#9238#0" expanded="true" />
+            <element signature="e#9405#9406#0" expanded="true" />
+            <element signature="e#9443#9444#0" expanded="true" />
+            <element signature="e#9622#9623#0" expanded="true" />
+            <element signature="e#9665#9666#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -812,9 +616,6 @@
             <element signature="e#570#571#0" expanded="true" />
             <element signature="e#623#624#0" expanded="true" />
             <element signature="e#672#673#0" expanded="true" />
-            <element signature="method#testAddEdgesUndir#0;class#GraphTester#0" expanded="false" />
-            <element signature="method#testRemoveEdgesDir#0;class#GraphTester#0" expanded="false" />
-            <element signature="method#testRemoveEdgesUndir#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testGettingEdgeWeight#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testToString#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testAddVertices#0;class#GraphTester#0" expanded="false" />
@@ -830,82 +631,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5508">
           <caret line="333" column="0" lean-forward="false" selection-start-line="333" selection-start-column="0" selection-end-line="333" selection-end-column="0" />
-          <folding>
-            <marker date="1511791702000" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1511791702000" expanded="false" signature="133:343" ph="..." />
-            <marker date="1511791702000" expanded="true" signature="390:397" ph="{}" />
-            <marker date="1511791702000" expanded="true" signature="468:539" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="594:646" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="718:766" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="822:875" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="921:1073" ph="{...}" />
-            <marker date="1511791702000" expanded="false" signature="1104:1115" ph=" { " />
-            <marker date="1511791702000" expanded="false" signature="1134:1140" ph=" }" />
-            <marker date="1511791702000" expanded="true" signature="1226:1627" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="1708:1856" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="1926:1973" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="2043:2120" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="2211:2325" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="2400:2466" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="2534:2760" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="2847:2942" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="3013:3079" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="3184:3304" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="3393:3466" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="3552:3625" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="3752:3817" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="3898:3986" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="4115:4180" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="4263:4353" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="4476:4541" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="4618:4702" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="4825:4890" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="4967:5051" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="5176:5241" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="5320:5406" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="5527:5592" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="5667:5749" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="5872:5937" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="6014:6098" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="6239:6335" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="6430:6505" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="6643:6739" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="6831:6906" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="7032:7121" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="7221:7351" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="7448:7577" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="7679:7798" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="7881:8030" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="8109:8257" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="8323:8384" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="8466:8572" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="8578:8596" ph="/**...*/" />
-            <marker date="1511791702000" expanded="true" signature="8681:8742" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="8748:8766" ph="/**...*/" />
-            <marker date="1511791702000" expanded="true" signature="8867:8967" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="9051:9119" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="9200:9268" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="9338:9390" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="9444:9496" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="9563:9652" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="9703:9752" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="9821:10009" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="10093:10196" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="10264:10323" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="10412:10497" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="10570:10634" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="10685:10851" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="10937:11143" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="11231:11287" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="11362:11883" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="11965:12104" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="12110:12128" ph="/**...*/" />
-            <marker date="1511791702000" expanded="true" signature="12235:12298" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="12304:12322" ph="/**...*/" />
-            <marker date="1511791702000" expanded="true" signature="12413:12467" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="12545:12593" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="12686:12752" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -917,16 +642,16 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1008#1009#0" expanded="true" />
             <element signature="e#1063#1064#0" expanded="true" />
-            <element signature="e#8560#8561#0" expanded="true" />
-            <element signature="e#8584#8585#0" expanded="true" />
-            <element signature="e#9357#9358#0" expanded="true" />
-            <element signature="e#9397#9398#0" expanded="true" />
-            <element signature="e#10064#10065#0" expanded="true" />
-            <element signature="e#10102#10103#0" expanded="true" />
-            <element signature="e#10270#10271#0" expanded="true" />
-            <element signature="e#10308#10309#0" expanded="true" />
-            <element signature="e#10487#10488#0" expanded="true" />
-            <element signature="e#10530#10531#0" expanded="true" />
+            <element signature="e#7694#7695#0" expanded="true" />
+            <element signature="e#7718#7719#0" expanded="true" />
+            <element signature="e#8491#8492#0" expanded="true" />
+            <element signature="e#8531#8532#0" expanded="true" />
+            <element signature="e#9199#9200#0" expanded="true" />
+            <element signature="e#9237#9238#0" expanded="true" />
+            <element signature="e#9405#9406#0" expanded="true" />
+            <element signature="e#9443#9444#0" expanded="true" />
+            <element signature="e#9622#9623#0" expanded="true" />
+            <element signature="e#9665#9666#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -943,9 +668,6 @@
             <element signature="e#570#571#0" expanded="true" />
             <element signature="e#623#624#0" expanded="true" />
             <element signature="e#672#673#0" expanded="true" />
-            <element signature="method#testAddEdgesUndir#0;class#GraphTester#0" expanded="false" />
-            <element signature="method#testRemoveEdgesDir#0;class#GraphTester#0" expanded="false" />
-            <element signature="method#testRemoveEdgesUndir#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testGettingEdgeWeight#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testToString#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testAddVertices#0;class#GraphTester#0" expanded="false" />
@@ -965,16 +687,16 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1008#1009#0" expanded="true" />
             <element signature="e#1063#1064#0" expanded="true" />
-            <element signature="e#8560#8561#0" expanded="true" />
-            <element signature="e#8584#8585#0" expanded="true" />
-            <element signature="e#9357#9358#0" expanded="true" />
-            <element signature="e#9397#9398#0" expanded="true" />
-            <element signature="e#10064#10065#0" expanded="true" />
-            <element signature="e#10102#10103#0" expanded="true" />
-            <element signature="e#10270#10271#0" expanded="true" />
-            <element signature="e#10308#10309#0" expanded="true" />
-            <element signature="e#10487#10488#0" expanded="true" />
-            <element signature="e#10530#10531#0" expanded="true" />
+            <element signature="e#7694#7695#0" expanded="true" />
+            <element signature="e#7718#7719#0" expanded="true" />
+            <element signature="e#8491#8492#0" expanded="true" />
+            <element signature="e#8531#8532#0" expanded="true" />
+            <element signature="e#9199#9200#0" expanded="true" />
+            <element signature="e#9237#9238#0" expanded="true" />
+            <element signature="e#9405#9406#0" expanded="true" />
+            <element signature="e#9443#9444#0" expanded="true" />
+            <element signature="e#9622#9623#0" expanded="true" />
+            <element signature="e#9665#9666#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -991,9 +713,6 @@
             <element signature="e#570#571#0" expanded="true" />
             <element signature="e#623#624#0" expanded="true" />
             <element signature="e#672#673#0" expanded="true" />
-            <element signature="method#testAddEdgesUndir#0;class#GraphTester#0" expanded="false" />
-            <element signature="method#testRemoveEdgesDir#0;class#GraphTester#0" expanded="false" />
-            <element signature="method#testRemoveEdgesUndir#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testGettingEdgeWeight#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testToString#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testAddVertices#0;class#GraphTester#0" expanded="false" />
@@ -1013,16 +732,16 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1008#1009#0" expanded="true" />
             <element signature="e#1063#1064#0" expanded="true" />
-            <element signature="e#8560#8561#0" expanded="true" />
-            <element signature="e#8584#8585#0" expanded="true" />
-            <element signature="e#9357#9358#0" expanded="true" />
-            <element signature="e#9397#9398#0" expanded="true" />
-            <element signature="e#10064#10065#0" expanded="true" />
-            <element signature="e#10102#10103#0" expanded="true" />
-            <element signature="e#10270#10271#0" expanded="true" />
-            <element signature="e#10308#10309#0" expanded="true" />
-            <element signature="e#10487#10488#0" expanded="true" />
-            <element signature="e#10530#10531#0" expanded="true" />
+            <element signature="e#7694#7695#0" expanded="true" />
+            <element signature="e#7718#7719#0" expanded="true" />
+            <element signature="e#8491#8492#0" expanded="true" />
+            <element signature="e#8531#8532#0" expanded="true" />
+            <element signature="e#9199#9200#0" expanded="true" />
+            <element signature="e#9237#9238#0" expanded="true" />
+            <element signature="e#9405#9406#0" expanded="true" />
+            <element signature="e#9443#9444#0" expanded="true" />
+            <element signature="e#9622#9623#0" expanded="true" />
+            <element signature="e#9665#9666#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1040,9 +759,6 @@
             <element signature="e#570#571#0" expanded="true" />
             <element signature="e#623#624#0" expanded="true" />
             <element signature="e#672#673#0" expanded="true" />
-            <element signature="method#testAddEdgesUndir#0;class#GraphTester#0" expanded="false" />
-            <element signature="method#testRemoveEdgesDir#0;class#GraphTester#0" expanded="false" />
-            <element signature="method#testRemoveEdgesUndir#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testGettingEdgeWeight#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testToString#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testAddVertices#0;class#GraphTester#0" expanded="false" />
@@ -1062,16 +778,16 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1008#1009#0" expanded="true" />
             <element signature="e#1063#1064#0" expanded="true" />
-            <element signature="e#8560#8561#0" expanded="true" />
-            <element signature="e#8584#8585#0" expanded="true" />
-            <element signature="e#9357#9358#0" expanded="true" />
-            <element signature="e#9397#9398#0" expanded="true" />
-            <element signature="e#10064#10065#0" expanded="true" />
-            <element signature="e#10102#10103#0" expanded="true" />
-            <element signature="e#10270#10271#0" expanded="true" />
-            <element signature="e#10308#10309#0" expanded="true" />
-            <element signature="e#10487#10488#0" expanded="true" />
-            <element signature="e#10530#10531#0" expanded="true" />
+            <element signature="e#7694#7695#0" expanded="true" />
+            <element signature="e#7718#7719#0" expanded="true" />
+            <element signature="e#8491#8492#0" expanded="true" />
+            <element signature="e#8531#8532#0" expanded="true" />
+            <element signature="e#9199#9200#0" expanded="true" />
+            <element signature="e#9237#9238#0" expanded="true" />
+            <element signature="e#9405#9406#0" expanded="true" />
+            <element signature="e#9443#9444#0" expanded="true" />
+            <element signature="e#9622#9623#0" expanded="true" />
+            <element signature="e#9665#9666#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1089,9 +805,6 @@
             <element signature="e#570#571#0" expanded="true" />
             <element signature="e#623#624#0" expanded="true" />
             <element signature="e#672#673#0" expanded="true" />
-            <element signature="method#testAddEdgesUndir#0;class#GraphTester#0" expanded="false" />
-            <element signature="method#testRemoveEdgesDir#0;class#GraphTester#0" expanded="false" />
-            <element signature="method#testRemoveEdgesUndir#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testGettingEdgeWeight#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testToString#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testAddVertices#0;class#GraphTester#0" expanded="false" />
@@ -1111,16 +824,16 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1008#1009#0" expanded="true" />
             <element signature="e#1063#1064#0" expanded="true" />
-            <element signature="e#8560#8561#0" expanded="true" />
-            <element signature="e#8584#8585#0" expanded="true" />
-            <element signature="e#9357#9358#0" expanded="true" />
-            <element signature="e#9397#9398#0" expanded="true" />
-            <element signature="e#10064#10065#0" expanded="true" />
-            <element signature="e#10102#10103#0" expanded="true" />
-            <element signature="e#10270#10271#0" expanded="true" />
-            <element signature="e#10308#10309#0" expanded="true" />
-            <element signature="e#10487#10488#0" expanded="true" />
-            <element signature="e#10530#10531#0" expanded="true" />
+            <element signature="e#7694#7695#0" expanded="true" />
+            <element signature="e#7718#7719#0" expanded="true" />
+            <element signature="e#8491#8492#0" expanded="true" />
+            <element signature="e#8531#8532#0" expanded="true" />
+            <element signature="e#9199#9200#0" expanded="true" />
+            <element signature="e#9237#9238#0" expanded="true" />
+            <element signature="e#9405#9406#0" expanded="true" />
+            <element signature="e#9443#9444#0" expanded="true" />
+            <element signature="e#9622#9623#0" expanded="true" />
+            <element signature="e#9665#9666#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1137,9 +850,6 @@
             <element signature="e#570#571#0" expanded="true" />
             <element signature="e#623#624#0" expanded="true" />
             <element signature="e#672#673#0" expanded="true" />
-            <element signature="method#testAddEdgesUndir#0;class#GraphTester#0" expanded="false" />
-            <element signature="method#testRemoveEdgesDir#0;class#GraphTester#0" expanded="false" />
-            <element signature="method#testRemoveEdgesUndir#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testGettingEdgeWeight#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testToString#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testAddVertices#0;class#GraphTester#0" expanded="false" />
@@ -1157,89 +867,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5508">
           <caret line="333" column="0" lean-forward="false" selection-start-line="333" selection-start-column="0" selection-end-line="333" selection-end-column="0" />
-          <folding>
-            <marker date="1511791702000" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1511791702000" expanded="false" signature="133:343" ph="..." />
-            <marker date="1511791702000" expanded="true" signature="390:397" ph="{}" />
-            <marker date="1511791702000" expanded="true" signature="468:539" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="594:646" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="718:766" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="822:875" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="921:1073" ph="{...}" />
-            <marker date="1511791702000" expanded="false" signature="1104:1115" ph=" { " />
-            <marker date="1511791702000" expanded="false" signature="1134:1140" ph=" }" />
-            <marker date="1511791702000" expanded="true" signature="1226:1627" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="1708:1856" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="1926:1973" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="2043:2120" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="2211:2325" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="2400:2466" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="2534:2760" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="2847:2942" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="3013:3079" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="3184:3304" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="3393:3466" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="3552:3625" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="3752:3817" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="3898:3986" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="4115:4180" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="4263:4353" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="4476:4541" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="4618:4702" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="4825:4890" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="4967:5051" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="5176:5241" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="5320:5406" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="5527:5592" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="5667:5749" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="5872:5937" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="6014:6098" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="6239:6335" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="6430:6505" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="6643:6739" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="6831:6906" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="7032:7121" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="7221:7351" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="7448:7577" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="7679:7798" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="7881:8030" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="8109:8257" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="8323:8384" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="8466:8572" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="8578:8596" ph="/**...*/" />
-            <marker date="1511791702000" expanded="true" signature="8681:8742" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="8748:8766" ph="/**...*/" />
-            <marker date="1511791702000" expanded="true" signature="8867:8967" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="9051:9119" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="9200:9268" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="9338:9390" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="9444:9496" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="9563:9652" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="9703:9752" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="9821:10009" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="10093:10196" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="10264:10323" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="10412:10497" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="10570:10634" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="10685:10851" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="10937:11143" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="11231:11287" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="11362:11883" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="11965:12104" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="12110:12128" ph="/**...*/" />
-            <marker date="1511791702000" expanded="true" signature="12235:12298" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="12304:12322" ph="/**...*/" />
-            <marker date="1511791702000" expanded="true" signature="12413:12467" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="12545:12593" ph="{...}" />
-            <marker date="1511791702000" expanded="true" signature="12686:12752" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/GraphTester.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="223" column="0" lean-forward="false" selection-start-line="223" selection-start-column="0" selection-end-line="223" selection-end-column="0" />
+        <state relative-caret-position="178">
+          <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#424#425#0" expanded="true" />
@@ -1248,9 +882,6 @@
             <element signature="e#570#571#0" expanded="true" />
             <element signature="e#623#624#0" expanded="true" />
             <element signature="e#672#673#0" expanded="true" />
-            <element signature="method#testAddEdgesUndir#0;class#GraphTester#0" expanded="false" />
-            <element signature="method#testRemoveEdgesDir#0;class#GraphTester#0" expanded="false" />
-            <element signature="method#testRemoveEdgesUndir#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testGettingEdgeWeight#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testToString#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testAddVertices#0;class#GraphTester#0" expanded="false" />
@@ -1264,22 +895,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Graph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="105" column="18" lean-forward="false" selection-start-line="105" selection-start-column="18" selection-end-line="105" selection-end-column="18" />
+        <state relative-caret-position="-969">
+          <caret line="165" column="17" lean-forward="false" selection-start-line="165" selection-start-column="17" selection-end-line="165" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1008#1009#0" expanded="true" />
             <element signature="e#1063#1064#0" expanded="true" />
-            <element signature="e#8560#8561#0" expanded="true" />
-            <element signature="e#8584#8585#0" expanded="true" />
-            <element signature="e#9357#9358#0" expanded="true" />
-            <element signature="e#9397#9398#0" expanded="true" />
-            <element signature="e#10064#10065#0" expanded="true" />
-            <element signature="e#10102#10103#0" expanded="true" />
-            <element signature="e#10270#10271#0" expanded="true" />
-            <element signature="e#10308#10309#0" expanded="true" />
-            <element signature="e#10487#10488#0" expanded="true" />
-            <element signature="e#10530#10531#0" expanded="true" />
+            <element signature="e#7694#7695#0" expanded="true" />
+            <element signature="e#7718#7719#0" expanded="true" />
+            <element signature="e#8491#8492#0" expanded="true" />
+            <element signature="e#8531#8532#0" expanded="true" />
+            <element signature="e#9199#9200#0" expanded="true" />
+            <element signature="e#9237#9238#0" expanded="true" />
+            <element signature="e#9405#9406#0" expanded="true" />
+            <element signature="e#9443#9444#0" expanded="true" />
+            <element signature="e#9622#9623#0" expanded="true" />
+            <element signature="e#9665#9666#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -52,13 +52,7 @@ public class Graph<T> {
         // get the edge's weight if it exists. Since undirected graphs only
         // store one side
         if (edgeExists(source, destination)) {
-            // if the graph is directed, or the
-            if (_isDirected || _graph.get(source).containsKey(destination)) {
-                returnWeight = _graph.get(source).get(destination);
-            }
-            else {
-                returnWeight = _graph.get(destination).get(source);
-            }
+            returnWeight = _graph.get(source).get(destination);
         }
 
         return returnWeight;
@@ -80,14 +74,6 @@ public class Graph<T> {
             // if there is an edge from source to destination, the edge exists
             if (_graph.get(source).containsKey(destination)) {
                 edgeExists = true;
-            }
-            // if there is an edge from destination to source and the graph
-            // is undirected, the edge exists
-            else {
-                if (_graph.get(destination).containsKey(source) &&
-                        !_isDirected) {
-                    edgeExists = true;
-                }
             }
         }
         return edgeExists;
@@ -177,21 +163,17 @@ public class Graph<T> {
         // if the edge does not yet exist
         if (!edgeExists(source, destination)) {
             _graph.get(source).put(destination, weight);
+            if (!_isDirected) {
+                _graph.get(destination).put(source, weight);
+            }
         }
         // if the edge does exist, update the weight
         else {
-            // if the graph is undirected, we must check both this edge and
-            // the other to update the correct weight
+            // update the source->destination edge, vice-versa as well if
+            // undirected
+            _graph.get(source).replace(destination, weight);
             if (!_isDirected) {
-                if  (_graph.get(source).containsKey(destination)) {
-                    _graph.get(source).replace(destination, weight);
-                }
-                else {
-                    _graph.get(destination).replace(source, weight);
-                }
-            }
-            else {
-                _graph.get(source).replace(destination, weight);
+                _graph.get(destination).replace(source, weight);
             }
         }
     }
@@ -217,12 +199,9 @@ public class Graph<T> {
         }
 
         // remove destination vertex from source in base hashMap. If
-        // undirected, check the other direction to remove that one (since we
-        // know the edge exists, it must be in one or the other)
-        if (_isDirected || _graph.get(source).containsKey(destination)) {
-            _graph.get(source).remove(destination);
-        }
-        else {
+        // undirected, check the other direction to remove that one as well
+        _graph.get(source).remove(destination);
+        if (!_isDirected) {
             _graph.get(destination).remove(source);
         }
     }
@@ -275,6 +254,7 @@ public class Graph<T> {
     public String toString() {
         return _graph.toString();
     }
+
 
     public static class Edge<E> {
         private E _source;
