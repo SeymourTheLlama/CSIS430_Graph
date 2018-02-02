@@ -15,22 +15,20 @@
       <file leaf-file-name="Graph.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Graph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-969">
-              <caret line="165" column="17" lean-forward="false" selection-start-line="165" selection-start-column="17" selection-end-line="165" selection-end-column="17" />
+            <state relative-caret-position="388">
+              <caret line="368" column="42" lean-forward="true" selection-start-line="368" selection-start-column="42" selection-end-line="368" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1008#1009#0" expanded="true" />
                 <element signature="e#1063#1064#0" expanded="true" />
-                <element signature="e#7694#7695#0" expanded="true" />
-                <element signature="e#7718#7719#0" expanded="true" />
-                <element signature="e#8491#8492#0" expanded="true" />
-                <element signature="e#8531#8532#0" expanded="true" />
-                <element signature="e#9199#9200#0" expanded="true" />
-                <element signature="e#9237#9238#0" expanded="true" />
-                <element signature="e#9405#9406#0" expanded="true" />
-                <element signature="e#9443#9444#0" expanded="true" />
-                <element signature="e#9622#9623#0" expanded="true" />
-                <element signature="e#9665#9666#0" expanded="true" />
+                <element signature="docComment;method#fromCSVFile#0;class#Graph#0" expanded="false" />
+                <element signature="method#fromCSVFile#0;class#Graph#0" expanded="false" />
+                <element signature="e#17411#17412#0" expanded="true" />
+                <element signature="e#17449#17450#0" expanded="true" />
+                <element signature="e#17617#17618#0" expanded="true" />
+                <element signature="e#17655#17656#0" expanded="true" />
+                <element signature="e#17834#17835#0" expanded="true" />
+                <element signature="e#17877#17878#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -39,17 +37,26 @@
       <file leaf-file-name="GraphTester.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/GraphTester.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+            <state relative-caret-position="177">
+              <caret line="376" column="37" lean-forward="true" selection-start-line="376" selection-start-column="37" selection-end-line="376" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#424#425#0" expanded="true" />
-                <element signature="e#470#471#0" expanded="true" />
-                <element signature="e#522#523#0" expanded="true" />
-                <element signature="e#570#571#0" expanded="true" />
-                <element signature="e#623#624#0" expanded="true" />
-                <element signature="e#672#673#0" expanded="true" />
+                <element signature="e#592#593#0" expanded="true" />
+                <element signature="e#638#639#0" expanded="true" />
+                <element signature="e#690#691#0" expanded="true" />
+                <element signature="e#738#739#0" expanded="true" />
+                <element signature="e#791#792#0" expanded="true" />
+                <element signature="e#840#841#0" expanded="true" />
+                <element signature="method#testRemoveVerticesWithEdgesDir#0;class#GraphTester#0" expanded="false" />
+                <element signature="method#testRemoveVerticesWithEdgesUndir#0;class#GraphTester#0" expanded="false" />
+                <element signature="method#testAddEdgesDir#0;class#GraphTester#0" expanded="false" />
+                <element signature="method#testAddEdgesUndir#0;class#GraphTester#0" expanded="false" />
+                <element signature="method#testRemoveEdgesDir#0;class#GraphTester#0" expanded="false" />
+                <element signature="method#testRemoveEdgesUndir#0;class#GraphTester#0" expanded="false" />
                 <element signature="method#testGettingEdgeWeight#0;class#GraphTester#0" expanded="false" />
+                <element signature="method#testEdgeExists#0;class#GraphTester#0" expanded="false" />
+                <element signature="method#testPathLength#0;class#GraphTester#0" expanded="false" />
+                <element signature="method#testFromCSVFile#0;class#GraphTester#0" expanded="false" />
                 <element signature="method#testToString#0;class#GraphTester#0" expanded="false" />
                 <element signature="method#testAddVertices#0;class#GraphTester#0" expanded="false" />
                 <element signature="method#testRemoveVertices#0;class#GraphTester#0" expanded="false" />
@@ -82,8 +89,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/GraphTester.java" />
-        <option value="$PROJECT_DIR$/tests/GraphTester.java" />
         <option value="$PROJECT_DIR$/src/Graph.java" />
+        <option value="$PROJECT_DIR$/tests/GraphTester.java" />
       </list>
     </option>
   </component>
@@ -109,8 +116,8 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -136,7 +143,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -162,7 +169,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.GraphTester">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -193,6 +200,26 @@
       <option name="MAIN_CLASS_NAME" value="GraphTester" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="GraphTester.testFromCSVFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="Graph" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GraphTester" />
+      <option name="METHOD_NAME" value="testFromCSVFile" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -264,9 +291,14 @@
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="JUnit.GraphTester" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.GraphTester.testFromCSVFile" />
+    </list>
     <recent_temporary>
-      <list size="1">
+      <list size="2">
         <item index="0" class="java.lang.String" itemvalue="JUnit.GraphTester" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.GraphTester.testFromCSVFile" />
       </list>
     </recent_temporary>
   </component>
@@ -287,60 +319,61 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GraphTester - 2018.01.21 at 14h 27m 13s.xml">
+    <history-entry file="GraphTester - 2018.02.01 at 19h 25m 33s.xml">
       <configuration name="GraphTester" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GraphTester - 2018.01.21 at 14h 31m 48s.xml">
+    <history-entry file="GraphTester - 2018.02.01 at 19h 25m 46s.xml">
       <configuration name="GraphTester" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GraphTester - 2018.01.21 at 14h 53m 22s.xml">
+    <history-entry file="GraphTester - 2018.02.01 at 19h 25m 52s.xml">
       <configuration name="GraphTester" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GraphTester - 2018.01.24 at 19h 09m 52s.xml">
+    <history-entry file="GraphTester - 2018.02.01 at 19h 26m 05s.xml">
       <configuration name="GraphTester" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GraphTester - 2018.01.24 at 19h 11m 02s.xml">
+    <history-entry file="GraphTester - 2018.02.01 at 19h 26m 54s.xml">
       <configuration name="GraphTester" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GraphTester - 2018.01.24 at 19h 12m 09s.xml">
+    <history-entry file="GraphTester - 2018.02.01 at 19h 27m 51s.xml">
       <configuration name="GraphTester" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GraphTester - 2018.01.24 at 19h 12m 50s.xml">
+    <history-entry file="GraphTester - 2018.02.01 at 19h 27m 56s.xml">
       <configuration name="GraphTester" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GraphTester - 2018.01.28 at 15h 09m 13s.xml">
+    <history-entry file="GraphTester - 2018.02.01 at 19h 28m 06s.xml">
       <configuration name="GraphTester" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GraphTester - 2018.01.29 at 18h 26m 41s.xml">
+    <history-entry file="GraphTester - 2018.02.01 at 19h 29m 59s.xml">
       <configuration name="GraphTester" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GraphTester - 2018.01.29 at 18h 28m 23s.xml">
+    <history-entry file="GraphTester - 2018.02.01 at 19h 30m 30s.xml">
       <configuration name="GraphTester" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="895" y="0" width="916" height="981" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5044444" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32949308" sideWeight="0.49555555" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10555556" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17222223" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39976957" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -352,31 +385,22 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/tests/GraphTester.java</url>
-          <line>607</line>
-          <properties />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/tests/GraphTester.java</url>
-          <line>198</line>
+          <line>203</line>
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/tests/GraphTester.java</url>
-          <line>197</line>
-          <properties class="GraphTester" method="testEdgeExists">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="7" />
+      <option name="time" value="10" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -389,16 +413,222 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1008#1009#0" expanded="true" />
             <element signature="e#1063#1064#0" expanded="true" />
-            <element signature="e#7694#7695#0" expanded="true" />
-            <element signature="e#7718#7719#0" expanded="true" />
-            <element signature="e#8491#8492#0" expanded="true" />
-            <element signature="e#8531#8532#0" expanded="true" />
-            <element signature="e#9199#9200#0" expanded="true" />
-            <element signature="e#9237#9238#0" expanded="true" />
-            <element signature="e#9405#9406#0" expanded="true" />
-            <element signature="e#9443#9444#0" expanded="true" />
-            <element signature="e#9622#9623#0" expanded="true" />
-            <element signature="e#9665#9666#0" expanded="true" />
+            <element signature="docComment;method#fromCSVFile#0;class#Graph#0" expanded="false" />
+            <element signature="method#fromCSVFile#0;class#Graph#0" expanded="false" />
+            <element signature="e#17411#17412#0" expanded="true" />
+            <element signature="e#17449#17450#0" expanded="true" />
+            <element signature="e#17617#17618#0" expanded="true" />
+            <element signature="e#17655#17656#0" expanded="true" />
+            <element signature="e#17834#17835#0" expanded="true" />
+            <element signature="e#17877#17878#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/GraphTester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1207">
+          <caret line="260" column="53" lean-forward="false" selection-start-line="260" selection-start-column="53" selection-end-line="260" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#638#639#0" expanded="true" />
+            <element signature="e#690#691#0" expanded="true" />
+            <element signature="e#738#739#0" expanded="true" />
+            <element signature="e#791#792#0" expanded="true" />
+            <element signature="e#840#841#0" expanded="true" />
+            <element signature="method#testRemoveVerticesWithEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveVerticesWithEdgesUndir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddEdgesUndir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveEdgesUndir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testGettingEdgeWeight#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testEdgeExists#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testPathLength#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testFromCSVFile#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testToString#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddVertices#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveVertices#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddEdges#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveEdges#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testFillGraph#0;class#GraphTester#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1008#1009#0" expanded="true" />
+            <element signature="e#1063#1064#0" expanded="true" />
+            <element signature="docComment;method#fromCSVFile#0;class#Graph#0" expanded="false" />
+            <element signature="method#fromCSVFile#0;class#Graph#0" expanded="false" />
+            <element signature="e#17411#17412#0" expanded="true" />
+            <element signature="e#17449#17450#0" expanded="true" />
+            <element signature="e#17617#17618#0" expanded="true" />
+            <element signature="e#17655#17656#0" expanded="true" />
+            <element signature="e#17834#17835#0" expanded="true" />
+            <element signature="e#17877#17878#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/GraphTester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1207">
+          <caret line="260" column="53" lean-forward="false" selection-start-line="260" selection-start-column="53" selection-end-line="260" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#638#639#0" expanded="true" />
+            <element signature="e#690#691#0" expanded="true" />
+            <element signature="e#738#739#0" expanded="true" />
+            <element signature="e#791#792#0" expanded="true" />
+            <element signature="e#840#841#0" expanded="true" />
+            <element signature="method#testRemoveVerticesWithEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveVerticesWithEdgesUndir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddEdgesUndir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveEdgesUndir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testGettingEdgeWeight#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testEdgeExists#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testPathLength#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testFromCSVFile#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testToString#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddVertices#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveVertices#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddEdges#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveEdges#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testFillGraph#0;class#GraphTester#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1008#1009#0" expanded="true" />
+            <element signature="e#1063#1064#0" expanded="true" />
+            <element signature="docComment;method#fromCSVFile#0;class#Graph#0" expanded="false" />
+            <element signature="method#fromCSVFile#0;class#Graph#0" expanded="false" />
+            <element signature="e#17411#17412#0" expanded="true" />
+            <element signature="e#17449#17450#0" expanded="true" />
+            <element signature="e#17617#17618#0" expanded="true" />
+            <element signature="e#17655#17656#0" expanded="true" />
+            <element signature="e#17834#17835#0" expanded="true" />
+            <element signature="e#17877#17878#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/GraphTester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1207">
+          <caret line="260" column="53" lean-forward="false" selection-start-line="260" selection-start-column="53" selection-end-line="260" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#638#639#0" expanded="true" />
+            <element signature="e#690#691#0" expanded="true" />
+            <element signature="e#738#739#0" expanded="true" />
+            <element signature="e#791#792#0" expanded="true" />
+            <element signature="e#840#841#0" expanded="true" />
+            <element signature="method#testRemoveVerticesWithEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveVerticesWithEdgesUndir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddEdgesUndir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveEdgesUndir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testGettingEdgeWeight#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testEdgeExists#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testPathLength#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testFromCSVFile#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testToString#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddVertices#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveVertices#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddEdges#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveEdges#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testFillGraph#0;class#GraphTester#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6171">
+          <caret line="363" column="49" lean-forward="true" selection-start-line="363" selection-start-column="49" selection-end-line="363" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1008#1009#0" expanded="true" />
+            <element signature="e#1063#1064#0" expanded="true" />
+            <element signature="docComment;method#fromCSVFile#0;class#Graph#0" expanded="false" />
+            <element signature="method#fromCSVFile#0;class#Graph#0" expanded="false" />
+            <element signature="e#17411#17412#0" expanded="true" />
+            <element signature="e#17449#17450#0" expanded="true" />
+            <element signature="e#17617#17618#0" expanded="true" />
+            <element signature="e#17655#17656#0" expanded="true" />
+            <element signature="e#17834#17835#0" expanded="true" />
+            <element signature="e#17877#17878#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/GraphTester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1598">
+          <caret line="253" column="40" lean-forward="false" selection-start-line="253" selection-start-column="40" selection-end-line="253" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#638#639#0" expanded="true" />
+            <element signature="e#690#691#0" expanded="true" />
+            <element signature="e#738#739#0" expanded="true" />
+            <element signature="e#791#792#0" expanded="true" />
+            <element signature="e#840#841#0" expanded="true" />
+            <element signature="method#testRemoveVerticesWithEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveVerticesWithEdgesUndir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddEdgesUndir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveEdgesUndir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testGettingEdgeWeight#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testEdgeExists#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testPathLength#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testFromCSVFile#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testToString#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddVertices#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveVertices#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddEdges#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveEdges#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testFillGraph#0;class#GraphTester#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1008#1009#0" expanded="true" />
+            <element signature="e#1063#1064#0" expanded="true" />
+            <element signature="docComment;method#fromCSVFile#0;class#Graph#0" expanded="false" />
+            <element signature="method#fromCSVFile#0;class#Graph#0" expanded="false" />
+            <element signature="e#17411#17412#0" expanded="true" />
+            <element signature="e#17449#17450#0" expanded="true" />
+            <element signature="e#17617#17618#0" expanded="true" />
+            <element signature="e#17655#17656#0" expanded="true" />
+            <element signature="e#17834#17835#0" expanded="true" />
+            <element signature="e#17877#17878#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -409,13 +639,22 @@
           <caret line="223" column="0" lean-forward="false" selection-start-line="223" selection-start-column="0" selection-end-line="223" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#424#425#0" expanded="true" />
-            <element signature="e#470#471#0" expanded="true" />
-            <element signature="e#522#523#0" expanded="true" />
-            <element signature="e#570#571#0" expanded="true" />
-            <element signature="e#623#624#0" expanded="true" />
-            <element signature="e#672#673#0" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#638#639#0" expanded="true" />
+            <element signature="e#690#691#0" expanded="true" />
+            <element signature="e#738#739#0" expanded="true" />
+            <element signature="e#791#792#0" expanded="true" />
+            <element signature="e#840#841#0" expanded="true" />
+            <element signature="method#testRemoveVerticesWithEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveVerticesWithEdgesUndir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddEdgesUndir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveEdgesUndir#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testGettingEdgeWeight#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testEdgeExists#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testPathLength#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testFromCSVFile#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testToString#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testAddVertices#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testRemoveVertices#0;class#GraphTester#0" expanded="false" />
@@ -434,16 +673,14 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1008#1009#0" expanded="true" />
             <element signature="e#1063#1064#0" expanded="true" />
-            <element signature="e#7694#7695#0" expanded="true" />
-            <element signature="e#7718#7719#0" expanded="true" />
-            <element signature="e#8491#8492#0" expanded="true" />
-            <element signature="e#8531#8532#0" expanded="true" />
-            <element signature="e#9199#9200#0" expanded="true" />
-            <element signature="e#9237#9238#0" expanded="true" />
-            <element signature="e#9405#9406#0" expanded="true" />
-            <element signature="e#9443#9444#0" expanded="true" />
-            <element signature="e#9622#9623#0" expanded="true" />
-            <element signature="e#9665#9666#0" expanded="true" />
+            <element signature="docComment;method#fromCSVFile#0;class#Graph#0" expanded="false" />
+            <element signature="method#fromCSVFile#0;class#Graph#0" expanded="false" />
+            <element signature="e#17411#17412#0" expanded="true" />
+            <element signature="e#17449#17450#0" expanded="true" />
+            <element signature="e#17617#17618#0" expanded="true" />
+            <element signature="e#17655#17656#0" expanded="true" />
+            <element signature="e#17834#17835#0" expanded="true" />
+            <element signature="e#17877#17878#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -454,13 +691,22 @@
           <caret line="231" column="55" lean-forward="false" selection-start-line="231" selection-start-column="55" selection-end-line="231" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#424#425#0" expanded="true" />
-            <element signature="e#470#471#0" expanded="true" />
-            <element signature="e#522#523#0" expanded="true" />
-            <element signature="e#570#571#0" expanded="true" />
-            <element signature="e#623#624#0" expanded="true" />
-            <element signature="e#672#673#0" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#638#639#0" expanded="true" />
+            <element signature="e#690#691#0" expanded="true" />
+            <element signature="e#738#739#0" expanded="true" />
+            <element signature="e#791#792#0" expanded="true" />
+            <element signature="e#840#841#0" expanded="true" />
+            <element signature="method#testRemoveVerticesWithEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveVerticesWithEdgesUndir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddEdgesUndir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveEdgesUndir#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testGettingEdgeWeight#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testEdgeExists#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testPathLength#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testFromCSVFile#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testToString#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testAddVertices#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testRemoveVertices#0;class#GraphTester#0" expanded="false" />
@@ -486,16 +732,14 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1008#1009#0" expanded="true" />
             <element signature="e#1063#1064#0" expanded="true" />
-            <element signature="e#7694#7695#0" expanded="true" />
-            <element signature="e#7718#7719#0" expanded="true" />
-            <element signature="e#8491#8492#0" expanded="true" />
-            <element signature="e#8531#8532#0" expanded="true" />
-            <element signature="e#9199#9200#0" expanded="true" />
-            <element signature="e#9237#9238#0" expanded="true" />
-            <element signature="e#9405#9406#0" expanded="true" />
-            <element signature="e#9443#9444#0" expanded="true" />
-            <element signature="e#9622#9623#0" expanded="true" />
-            <element signature="e#9665#9666#0" expanded="true" />
+            <element signature="docComment;method#fromCSVFile#0;class#Graph#0" expanded="false" />
+            <element signature="method#fromCSVFile#0;class#Graph#0" expanded="false" />
+            <element signature="e#17411#17412#0" expanded="true" />
+            <element signature="e#17449#17450#0" expanded="true" />
+            <element signature="e#17617#17618#0" expanded="true" />
+            <element signature="e#17655#17656#0" expanded="true" />
+            <element signature="e#17834#17835#0" expanded="true" />
+            <element signature="e#17877#17878#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -506,13 +750,22 @@
           <caret line="231" column="55" lean-forward="true" selection-start-line="231" selection-start-column="55" selection-end-line="231" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#424#425#0" expanded="true" />
-            <element signature="e#470#471#0" expanded="true" />
-            <element signature="e#522#523#0" expanded="true" />
-            <element signature="e#570#571#0" expanded="true" />
-            <element signature="e#623#624#0" expanded="true" />
-            <element signature="e#672#673#0" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#638#639#0" expanded="true" />
+            <element signature="e#690#691#0" expanded="true" />
+            <element signature="e#738#739#0" expanded="true" />
+            <element signature="e#791#792#0" expanded="true" />
+            <element signature="e#840#841#0" expanded="true" />
+            <element signature="method#testRemoveVerticesWithEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveVerticesWithEdgesUndir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddEdgesUndir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveEdgesUndir#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testGettingEdgeWeight#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testEdgeExists#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testPathLength#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testFromCSVFile#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testToString#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testAddVertices#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testRemoveVertices#0;class#GraphTester#0" expanded="false" />
@@ -538,16 +791,14 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1008#1009#0" expanded="true" />
             <element signature="e#1063#1064#0" expanded="true" />
-            <element signature="e#7694#7695#0" expanded="true" />
-            <element signature="e#7718#7719#0" expanded="true" />
-            <element signature="e#8491#8492#0" expanded="true" />
-            <element signature="e#8531#8532#0" expanded="true" />
-            <element signature="e#9199#9200#0" expanded="true" />
-            <element signature="e#9237#9238#0" expanded="true" />
-            <element signature="e#9405#9406#0" expanded="true" />
-            <element signature="e#9443#9444#0" expanded="true" />
-            <element signature="e#9622#9623#0" expanded="true" />
-            <element signature="e#9665#9666#0" expanded="true" />
+            <element signature="docComment;method#fromCSVFile#0;class#Graph#0" expanded="false" />
+            <element signature="method#fromCSVFile#0;class#Graph#0" expanded="false" />
+            <element signature="e#17411#17412#0" expanded="true" />
+            <element signature="e#17449#17450#0" expanded="true" />
+            <element signature="e#17617#17618#0" expanded="true" />
+            <element signature="e#17655#17656#0" expanded="true" />
+            <element signature="e#17834#17835#0" expanded="true" />
+            <element signature="e#17877#17878#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -558,13 +809,22 @@
           <caret line="217" column="0" lean-forward="false" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#424#425#0" expanded="true" />
-            <element signature="e#470#471#0" expanded="true" />
-            <element signature="e#522#523#0" expanded="true" />
-            <element signature="e#570#571#0" expanded="true" />
-            <element signature="e#623#624#0" expanded="true" />
-            <element signature="e#672#673#0" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#638#639#0" expanded="true" />
+            <element signature="e#690#691#0" expanded="true" />
+            <element signature="e#738#739#0" expanded="true" />
+            <element signature="e#791#792#0" expanded="true" />
+            <element signature="e#840#841#0" expanded="true" />
+            <element signature="method#testRemoveVerticesWithEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveVerticesWithEdgesUndir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddEdgesUndir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveEdgesUndir#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testGettingEdgeWeight#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testEdgeExists#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testPathLength#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testFromCSVFile#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testToString#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testAddVertices#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testRemoveVertices#0;class#GraphTester#0" expanded="false" />
@@ -590,16 +850,14 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1008#1009#0" expanded="true" />
             <element signature="e#1063#1064#0" expanded="true" />
-            <element signature="e#7694#7695#0" expanded="true" />
-            <element signature="e#7718#7719#0" expanded="true" />
-            <element signature="e#8491#8492#0" expanded="true" />
-            <element signature="e#8531#8532#0" expanded="true" />
-            <element signature="e#9199#9200#0" expanded="true" />
-            <element signature="e#9237#9238#0" expanded="true" />
-            <element signature="e#9405#9406#0" expanded="true" />
-            <element signature="e#9443#9444#0" expanded="true" />
-            <element signature="e#9622#9623#0" expanded="true" />
-            <element signature="e#9665#9666#0" expanded="true" />
+            <element signature="docComment;method#fromCSVFile#0;class#Graph#0" expanded="false" />
+            <element signature="method#fromCSVFile#0;class#Graph#0" expanded="false" />
+            <element signature="e#17411#17412#0" expanded="true" />
+            <element signature="e#17449#17450#0" expanded="true" />
+            <element signature="e#17617#17618#0" expanded="true" />
+            <element signature="e#17655#17656#0" expanded="true" />
+            <element signature="e#17834#17835#0" expanded="true" />
+            <element signature="e#17877#17878#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -610,13 +868,22 @@
           <caret line="217" column="0" lean-forward="false" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#424#425#0" expanded="true" />
-            <element signature="e#470#471#0" expanded="true" />
-            <element signature="e#522#523#0" expanded="true" />
-            <element signature="e#570#571#0" expanded="true" />
-            <element signature="e#623#624#0" expanded="true" />
-            <element signature="e#672#673#0" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#638#639#0" expanded="true" />
+            <element signature="e#690#691#0" expanded="true" />
+            <element signature="e#738#739#0" expanded="true" />
+            <element signature="e#791#792#0" expanded="true" />
+            <element signature="e#840#841#0" expanded="true" />
+            <element signature="method#testRemoveVerticesWithEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveVerticesWithEdgesUndir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddEdgesUndir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveEdgesUndir#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testGettingEdgeWeight#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testEdgeExists#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testPathLength#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testFromCSVFile#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testToString#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testAddVertices#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testRemoveVertices#0;class#GraphTester#0" expanded="false" />
@@ -642,16 +909,14 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1008#1009#0" expanded="true" />
             <element signature="e#1063#1064#0" expanded="true" />
-            <element signature="e#7694#7695#0" expanded="true" />
-            <element signature="e#7718#7719#0" expanded="true" />
-            <element signature="e#8491#8492#0" expanded="true" />
-            <element signature="e#8531#8532#0" expanded="true" />
-            <element signature="e#9199#9200#0" expanded="true" />
-            <element signature="e#9237#9238#0" expanded="true" />
-            <element signature="e#9405#9406#0" expanded="true" />
-            <element signature="e#9443#9444#0" expanded="true" />
-            <element signature="e#9622#9623#0" expanded="true" />
-            <element signature="e#9665#9666#0" expanded="true" />
+            <element signature="docComment;method#fromCSVFile#0;class#Graph#0" expanded="false" />
+            <element signature="method#fromCSVFile#0;class#Graph#0" expanded="false" />
+            <element signature="e#17411#17412#0" expanded="true" />
+            <element signature="e#17449#17450#0" expanded="true" />
+            <element signature="e#17617#17618#0" expanded="true" />
+            <element signature="e#17655#17656#0" expanded="true" />
+            <element signature="e#17834#17835#0" expanded="true" />
+            <element signature="e#17877#17878#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -662,13 +927,22 @@
           <caret line="209" column="0" lean-forward="false" selection-start-line="209" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#424#425#0" expanded="true" />
-            <element signature="e#470#471#0" expanded="true" />
-            <element signature="e#522#523#0" expanded="true" />
-            <element signature="e#570#571#0" expanded="true" />
-            <element signature="e#623#624#0" expanded="true" />
-            <element signature="e#672#673#0" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#638#639#0" expanded="true" />
+            <element signature="e#690#691#0" expanded="true" />
+            <element signature="e#738#739#0" expanded="true" />
+            <element signature="e#791#792#0" expanded="true" />
+            <element signature="e#840#841#0" expanded="true" />
+            <element signature="method#testRemoveVerticesWithEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveVerticesWithEdgesUndir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddEdgesUndir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveEdgesUndir#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testGettingEdgeWeight#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testEdgeExists#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testPathLength#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testFromCSVFile#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testToString#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testAddVertices#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testRemoveVertices#0;class#GraphTester#0" expanded="false" />
@@ -687,16 +961,14 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1008#1009#0" expanded="true" />
             <element signature="e#1063#1064#0" expanded="true" />
-            <element signature="e#7694#7695#0" expanded="true" />
-            <element signature="e#7718#7719#0" expanded="true" />
-            <element signature="e#8491#8492#0" expanded="true" />
-            <element signature="e#8531#8532#0" expanded="true" />
-            <element signature="e#9199#9200#0" expanded="true" />
-            <element signature="e#9237#9238#0" expanded="true" />
-            <element signature="e#9405#9406#0" expanded="true" />
-            <element signature="e#9443#9444#0" expanded="true" />
-            <element signature="e#9622#9623#0" expanded="true" />
-            <element signature="e#9665#9666#0" expanded="true" />
+            <element signature="docComment;method#fromCSVFile#0;class#Graph#0" expanded="false" />
+            <element signature="method#fromCSVFile#0;class#Graph#0" expanded="false" />
+            <element signature="e#17411#17412#0" expanded="true" />
+            <element signature="e#17449#17450#0" expanded="true" />
+            <element signature="e#17617#17618#0" expanded="true" />
+            <element signature="e#17655#17656#0" expanded="true" />
+            <element signature="e#17834#17835#0" expanded="true" />
+            <element signature="e#17877#17878#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -707,13 +979,22 @@
           <caret line="209" column="0" lean-forward="false" selection-start-line="209" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#424#425#0" expanded="true" />
-            <element signature="e#470#471#0" expanded="true" />
-            <element signature="e#522#523#0" expanded="true" />
-            <element signature="e#570#571#0" expanded="true" />
-            <element signature="e#623#624#0" expanded="true" />
-            <element signature="e#672#673#0" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#638#639#0" expanded="true" />
+            <element signature="e#690#691#0" expanded="true" />
+            <element signature="e#738#739#0" expanded="true" />
+            <element signature="e#791#792#0" expanded="true" />
+            <element signature="e#840#841#0" expanded="true" />
+            <element signature="method#testRemoveVerticesWithEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveVerticesWithEdgesUndir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddEdgesUndir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveEdgesUndir#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testGettingEdgeWeight#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testEdgeExists#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testPathLength#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testFromCSVFile#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testToString#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testAddVertices#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testRemoveVertices#0;class#GraphTester#0" expanded="false" />
@@ -732,16 +1013,14 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1008#1009#0" expanded="true" />
             <element signature="e#1063#1064#0" expanded="true" />
-            <element signature="e#7694#7695#0" expanded="true" />
-            <element signature="e#7718#7719#0" expanded="true" />
-            <element signature="e#8491#8492#0" expanded="true" />
-            <element signature="e#8531#8532#0" expanded="true" />
-            <element signature="e#9199#9200#0" expanded="true" />
-            <element signature="e#9237#9238#0" expanded="true" />
-            <element signature="e#9405#9406#0" expanded="true" />
-            <element signature="e#9443#9444#0" expanded="true" />
-            <element signature="e#9622#9623#0" expanded="true" />
-            <element signature="e#9665#9666#0" expanded="true" />
+            <element signature="docComment;method#fromCSVFile#0;class#Graph#0" expanded="false" />
+            <element signature="method#fromCSVFile#0;class#Graph#0" expanded="false" />
+            <element signature="e#17411#17412#0" expanded="true" />
+            <element signature="e#17449#17450#0" expanded="true" />
+            <element signature="e#17617#17618#0" expanded="true" />
+            <element signature="e#17655#17656#0" expanded="true" />
+            <element signature="e#17834#17835#0" expanded="true" />
+            <element signature="e#17877#17878#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -753,13 +1032,22 @@
           <caret line="214" column="0" lean-forward="false" selection-start-line="214" selection-start-column="0" selection-end-line="214" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#424#425#0" expanded="true" />
-            <element signature="e#470#471#0" expanded="true" />
-            <element signature="e#522#523#0" expanded="true" />
-            <element signature="e#570#571#0" expanded="true" />
-            <element signature="e#623#624#0" expanded="true" />
-            <element signature="e#672#673#0" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#638#639#0" expanded="true" />
+            <element signature="e#690#691#0" expanded="true" />
+            <element signature="e#738#739#0" expanded="true" />
+            <element signature="e#791#792#0" expanded="true" />
+            <element signature="e#840#841#0" expanded="true" />
+            <element signature="method#testRemoveVerticesWithEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveVerticesWithEdgesUndir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddEdgesUndir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveEdgesUndir#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testGettingEdgeWeight#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testEdgeExists#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testPathLength#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testFromCSVFile#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testToString#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testAddVertices#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testRemoveVertices#0;class#GraphTester#0" expanded="false" />
@@ -778,16 +1066,14 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1008#1009#0" expanded="true" />
             <element signature="e#1063#1064#0" expanded="true" />
-            <element signature="e#7694#7695#0" expanded="true" />
-            <element signature="e#7718#7719#0" expanded="true" />
-            <element signature="e#8491#8492#0" expanded="true" />
-            <element signature="e#8531#8532#0" expanded="true" />
-            <element signature="e#9199#9200#0" expanded="true" />
-            <element signature="e#9237#9238#0" expanded="true" />
-            <element signature="e#9405#9406#0" expanded="true" />
-            <element signature="e#9443#9444#0" expanded="true" />
-            <element signature="e#9622#9623#0" expanded="true" />
-            <element signature="e#9665#9666#0" expanded="true" />
+            <element signature="docComment;method#fromCSVFile#0;class#Graph#0" expanded="false" />
+            <element signature="method#fromCSVFile#0;class#Graph#0" expanded="false" />
+            <element signature="e#17411#17412#0" expanded="true" />
+            <element signature="e#17449#17450#0" expanded="true" />
+            <element signature="e#17617#17618#0" expanded="true" />
+            <element signature="e#17655#17656#0" expanded="true" />
+            <element signature="e#17834#17835#0" expanded="true" />
+            <element signature="e#17877#17878#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -799,13 +1085,22 @@
           <caret line="135" column="0" lean-forward="true" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#424#425#0" expanded="true" />
-            <element signature="e#470#471#0" expanded="true" />
-            <element signature="e#522#523#0" expanded="true" />
-            <element signature="e#570#571#0" expanded="true" />
-            <element signature="e#623#624#0" expanded="true" />
-            <element signature="e#672#673#0" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#638#639#0" expanded="true" />
+            <element signature="e#690#691#0" expanded="true" />
+            <element signature="e#738#739#0" expanded="true" />
+            <element signature="e#791#792#0" expanded="true" />
+            <element signature="e#840#841#0" expanded="true" />
+            <element signature="method#testRemoveVerticesWithEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveVerticesWithEdgesUndir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddEdgesUndir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveEdgesUndir#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testGettingEdgeWeight#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testEdgeExists#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testPathLength#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testFromCSVFile#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testToString#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testAddVertices#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testRemoveVertices#0;class#GraphTester#0" expanded="false" />
@@ -824,16 +1119,14 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1008#1009#0" expanded="true" />
             <element signature="e#1063#1064#0" expanded="true" />
-            <element signature="e#7694#7695#0" expanded="true" />
-            <element signature="e#7718#7719#0" expanded="true" />
-            <element signature="e#8491#8492#0" expanded="true" />
-            <element signature="e#8531#8532#0" expanded="true" />
-            <element signature="e#9199#9200#0" expanded="true" />
-            <element signature="e#9237#9238#0" expanded="true" />
-            <element signature="e#9405#9406#0" expanded="true" />
-            <element signature="e#9443#9444#0" expanded="true" />
-            <element signature="e#9622#9623#0" expanded="true" />
-            <element signature="e#9665#9666#0" expanded="true" />
+            <element signature="docComment;method#fromCSVFile#0;class#Graph#0" expanded="false" />
+            <element signature="method#fromCSVFile#0;class#Graph#0" expanded="false" />
+            <element signature="e#17411#17412#0" expanded="true" />
+            <element signature="e#17449#17450#0" expanded="true" />
+            <element signature="e#17617#17618#0" expanded="true" />
+            <element signature="e#17655#17656#0" expanded="true" />
+            <element signature="e#17834#17835#0" expanded="true" />
+            <element signature="e#17877#17878#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -844,13 +1137,22 @@
           <caret line="200" column="0" lean-forward="false" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#424#425#0" expanded="true" />
-            <element signature="e#470#471#0" expanded="true" />
-            <element signature="e#522#523#0" expanded="true" />
-            <element signature="e#570#571#0" expanded="true" />
-            <element signature="e#623#624#0" expanded="true" />
-            <element signature="e#672#673#0" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#638#639#0" expanded="true" />
+            <element signature="e#690#691#0" expanded="true" />
+            <element signature="e#738#739#0" expanded="true" />
+            <element signature="e#791#792#0" expanded="true" />
+            <element signature="e#840#841#0" expanded="true" />
+            <element signature="method#testRemoveVerticesWithEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveVerticesWithEdgesUndir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddEdgesUndir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveEdgesUndir#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testGettingEdgeWeight#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testEdgeExists#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testPathLength#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testFromCSVFile#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testToString#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testAddVertices#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testRemoveVertices#0;class#GraphTester#0" expanded="false" />
@@ -872,17 +1174,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/GraphTester.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+        <state relative-caret-position="177">
+          <caret line="376" column="37" lean-forward="true" selection-start-line="376" selection-start-column="37" selection-end-line="376" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#424#425#0" expanded="true" />
-            <element signature="e#470#471#0" expanded="true" />
-            <element signature="e#522#523#0" expanded="true" />
-            <element signature="e#570#571#0" expanded="true" />
-            <element signature="e#623#624#0" expanded="true" />
-            <element signature="e#672#673#0" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#638#639#0" expanded="true" />
+            <element signature="e#690#691#0" expanded="true" />
+            <element signature="e#738#739#0" expanded="true" />
+            <element signature="e#791#792#0" expanded="true" />
+            <element signature="e#840#841#0" expanded="true" />
+            <element signature="method#testRemoveVerticesWithEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveVerticesWithEdgesUndir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testAddEdgesUndir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveEdgesDir#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testRemoveEdgesUndir#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testGettingEdgeWeight#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testEdgeExists#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testPathLength#0;class#GraphTester#0" expanded="false" />
+            <element signature="method#testFromCSVFile#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testToString#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testAddVertices#0;class#GraphTester#0" expanded="false" />
             <element signature="method#testRemoveVertices#0;class#GraphTester#0" expanded="false" />
@@ -895,22 +1206,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Graph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-969">
-          <caret line="165" column="17" lean-forward="false" selection-start-line="165" selection-start-column="17" selection-end-line="165" selection-end-column="17" />
+        <state relative-caret-position="388">
+          <caret line="368" column="42" lean-forward="true" selection-start-line="368" selection-start-column="42" selection-end-line="368" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1008#1009#0" expanded="true" />
             <element signature="e#1063#1064#0" expanded="true" />
-            <element signature="e#7694#7695#0" expanded="true" />
-            <element signature="e#7718#7719#0" expanded="true" />
-            <element signature="e#8491#8492#0" expanded="true" />
-            <element signature="e#8531#8532#0" expanded="true" />
-            <element signature="e#9199#9200#0" expanded="true" />
-            <element signature="e#9237#9238#0" expanded="true" />
-            <element signature="e#9405#9406#0" expanded="true" />
-            <element signature="e#9443#9444#0" expanded="true" />
-            <element signature="e#9622#9623#0" expanded="true" />
-            <element signature="e#9665#9666#0" expanded="true" />
+            <element signature="docComment;method#fromCSVFile#0;class#Graph#0" expanded="false" />
+            <element signature="method#fromCSVFile#0;class#Graph#0" expanded="false" />
+            <element signature="e#17411#17412#0" expanded="true" />
+            <element signature="e#17449#17450#0" expanded="true" />
+            <element signature="e#17617#17618#0" expanded="true" />
+            <element signature="e#17655#17656#0" expanded="true" />
+            <element signature="e#17834#17835#0" expanded="true" />
+            <element signature="e#17877#17878#0" expanded="true" />
           </folding>
         </state>
       </provider>

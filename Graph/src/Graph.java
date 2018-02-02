@@ -152,7 +152,7 @@ public class Graph<T> {
         // if this would be a loop or the source or destination is null,
         // throw an exception
         if (source == null || destination == null
-                || source.equals(destination)) {
+                || source == destination) {
             throw new IllegalArgumentException();
         }
         else if (!_graph.containsKey(source) ||
@@ -209,14 +209,49 @@ public class Graph<T> {
 
     /**
      * Returns the length of the given set of vertices if they are a path
-     * through the graph. If they are not a path or the list an empty, then
+     * through the graph. If they are not a path or the list is empty, then
      * this returns -1.
      *
-     * @param pathList
-     * @return
+     * @param pathList list of vertices
+     * @return -1 for an empty list or a nonexistent path, length of path
+     * otherwise
      */
     public long pathLength(List<T> pathList) {
-        return 0;
+        long length = -1;
+        boolean isPath = true;
+        int pathIndex = 0;
+        T currentVertex = null;
+        T lastVertex = null;
+
+        // for each element in the path list
+        while (isPath && pathIndex < pathList.size()) {
+            currentVertex = pathList.get(pathIndex);
+
+            // if the vertex does not exist in the graph
+            if (!_graph.containsKey(currentVertex)) {
+                isPath = false;
+                length = -1;
+            }
+            // if this is the first element, set length to 0
+            else if (pathList.get(0) == currentVertex) {
+                length = 0;
+            }
+            // if an edge exists from the last vertex to this one, add its
+            // weight to the length
+            else if (_graph.get(lastVertex).containsKey(currentVertex)) {
+                length += getEdgeWeight(lastVertex, currentVertex);
+            }
+            else {
+                isPath = false;
+                length = -1;
+            }
+
+            pathIndex++;
+            lastVertex = currentVertex;
+        }
+
+
+        return length;
     }
 
 
@@ -224,25 +259,202 @@ public class Graph<T> {
      * Finds the shortest path between the source and the destination
      * vertices. Returns null if no path exists.
      *
-     * @param source
-     * @param destination
-     * @return
+     * @param source vertex to try to find the shortest path from
+     * @param destination vertex to try to find the shortest path to
+     * @return null if no path exists, otherwise list of edges that
+     * constitute the shortest path from the given source to the given
+     * destination
      * @throws NoSuchElementException
      */
-    public List<Edge<T>> shortestPathBetween(T source, T destination) throws NoSuchElementException {
-        return null;
+    public List<Edge<T>> shortestPathBetween(T source, T destination)
+            throws NoSuchElementException {
+        // set up variables
+        List<Edge<T>> shortestPath = new ArrayList<>();
+        HashMap<T, Edge<T>> connectedElements = new HashMap<>();
+        PriorityQueue<Edge<T>> frontier = new PriorityQueue<>();
+        T currentVertex = null;
+        Edge<T> currentEdge = new Edge<>(null, source, 0);
+        boolean destFound = false;
+        boolean graphSearched = false;
+        boolean newEdge = false;
+        int pathWeight;
+
+        // if source and destination vertices not in graph, throw exception
+        if (!_graph.containsKey(source) || !_graph.containsKey(destination)) {
+            throw new NoSuchElementException();
+        }
+
+
+        // otherwise, start with the source and begin finding neighbors.
+        connectedElements.put(source, currentEdge);
+        currentVertex = source;
+
+        if (source == destination) {
+            destFound = true;
+        }
+
+        while (!graphSearched && !destFound) {
+            newEdge = false;
+
+            // if the graphSearched flag isn't turned back to false by a new
+            // edge being added to the frontier, then we must be done.
+            graphSearched = true;
+
+            // add every edge connected to the recent new addition to the
+            // connectedElements set
+            for (T vertex : _graph.get(currentVertex).keySet()) {
+                if (!connectedElements.containsKey(vertex)) {
+                    // add the weight of the nearest edge added to the weight
+                    // of the path taken to reach this point
+                    pathWeight = getEdgeWeight(currentVertex, vertex) +
+                            connectedElements.get(currentVertex).getWeight();
+
+                    // add the edge to the frontier with the correct weight
+                    frontier.offer(new Edge<>(currentVertex, vertex,
+                            pathWeight));
+
+                    // since we have just added a new element to the
+                    // frontier, there is more yet to do before the graph is
+                    // completely searched
+                    graphSearched = false;
+                }
+            }
+
+            // the edge with the least total pathWeight is the next to add to
+            // connectedVertices
+            while (!frontier.isEmpty() && !newEdge) {
+                // if the edge to add wouldn't connect to something already
+                // connected
+                if (!connectedElements.containsKey(
+                        frontier.peek().getDestination())) {
+                    // define it as the next edge to work with
+                    currentEdge = frontier.poll();
+                    // we have our new edge, and we can stop the while loop
+                    newEdge = true;
+                } else {
+                    // we don't want duplicate edges, so ditch it
+                    frontier.poll();
+                }
+            }
+
+            // if the frontier is empty or had no non-duplicate vertices, then
+            // the graph has been searched already.
+            if (!newEdge) {
+                graphSearched = true;
+            }
+
+            // add the edge and its destination vertex to the connected elements
+            currentVertex = currentEdge.getDestination();
+            connectedElements.put(currentVertex, currentEdge);
+
+            // if the current vertex is the destination, we are done
+            if (currentVertex.equals(destination)) {
+                destFound = true;
+            }
+        }
+
+        // when we first hit this, the current vertex will be the destination
+        // and the current edge will be the path taken to get there.
+        while (currentEdge.getSource() != null && !graphSearched) {
+            // add the current edge to shortest path, but with the proper
+            // weight from the graph itself.
+            shortestPath.add(new Edge<>(currentEdge.getSource(), currentVertex,
+                    getEdgeWeight(currentEdge.getSource(), currentVertex)));
+
+            // reset current edge as the edge connecting to it
+            currentVertex = currentEdge.getSource();
+            currentEdge = connectedElements.get(currentVertex);
+        }
+
+        Collections.reverse(shortestPath);
+
+        // if no destination was ever found, then return null
+        if (!destFound) {
+            shortestPath = null;
+        }
+
+        return shortestPath;
     }
 
 
     /**
+     * Factory method that constructs and populates a graph from the given
+     * input file. The file is assumed to have the following format:
      *
-     * @param isDirected
-     * @param inputFile
-     * @return
-     * @throws IOException
+     * <# of vertices>
+     * <first vertex>
+     * <second vertex>
+     * ...
+     * <nth vertex>
+     * <# of edges>
+     * <source>,<destination>,<weight>
+     * <source>,<destination>,<weight>
+     * ...
+     *
+     * such as:
+     *
+     * 3
+     * v1
+     * v2
+     * v3
+     * 2
+     * v1,v3,5
+     * v2,v1,1
+     *
+     * @param isDirected if the graph to be constructed should be directed or
+     *                  not
+     * @param inputFile the file to construct a graph from. it should be
+     *                  formatted as shown in the main javadoc.
+     * @return graph constructed as per the CSV file's contents
+     * @throws IOException if an error is detected with the user's file
      */
     public static Graph<String> fromCSVFile(boolean isDirected, Scanner inputFile) throws IOException {
-        return null;
+        if (inputFile == null) {
+            throw new IOException();
+        }
+
+        Scanner lineReader;
+        int numVertices;
+        int numEdges ;
+        Graph<String> csvGraph = new Graph<>(isDirected);
+
+        try {
+            // add vertices
+            // first value in the list should be the number of vertices
+            numVertices = inputFile.nextInt();
+            inputFile.nextLine();
+
+            // iterate over the number of vertices in the graph
+            for (int i = 0; i < numVertices; i++) {
+                csvGraph.addVertex(inputFile.nextLine());
+            }
+
+            // add edges
+            // next value should be the number of edges
+            if (inputFile.hasNextInt()) {
+                numEdges = inputFile.nextInt();
+                inputFile.nextLine();
+
+                // iterate over the number of vertices in the graph
+                for (int i = 0; i < numEdges; i++) {
+                    lineReader = new Scanner(inputFile.nextLine());
+                    lineReader.useDelimiter(",");
+                    csvGraph.addEdge(lineReader.next(), lineReader.next(),
+                            lineReader.nextInt());
+                }
+            }
+            // if it has more elements but not a starting int, then they have
+            // more vertices that they said they would.
+            else if (inputFile.hasNext()) {
+                throw new IOException();
+            }
+        }
+        catch (NumberFormatException | ClassCastException |
+                NoSuchElementException e) {
+            throw new IOException();
+        }
+
+        return csvGraph;
     }
 
 
@@ -252,11 +464,11 @@ public class Graph<T> {
      * @return representation of graph in string form
      */
     public String toString() {
-        return _graph.toString();
+        return "Directed: " + _isDirected + " " + _graph.toString();
     }
 
 
-    public static class Edge<E> {
+    public static class Edge<E> implements Comparable<Edge<E>>{
         private E _source;
         private E _destination;
         private int _weight;
@@ -313,6 +525,24 @@ public class Graph<T> {
         public String toString() {
             return String.format("<%s, %s;  %d>",
                     _source.toString(), _destination.toString(), _weight);
+        }
+
+
+        /**
+         * Compares this edge with another, returning a negative number if
+         * the other's weight is larger, zero if they are equal, and a
+         * positive number if the other's weight is smaller.
+         *
+         * @param otherEdge the edge to compare this one with.
+         * @return negative if this edge's weight is less that the other's
+         * weight, zero if they are equal, positive if the other's is less
+         */
+        public int compareTo(Edge<E> otherEdge) {
+            if (otherEdge == null) {
+                throw new NullPointerException();
+            }
+
+            return (_weight - otherEdge._weight);
         }
     }
 }

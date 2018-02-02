@@ -1,6 +1,11 @@
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import org.junit.*;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Scanner;
 
 import static org.junit.Assert.*;
 
@@ -221,9 +226,164 @@ public class GraphTester {
 
     @Test
     public void testPathLength() {
+        List<String> pathListTest = new ArrayList<>();
 
+        assertEquals(-1,_testUndirGraph.pathLength(pathListTest));
+
+        pathListTest.add("Below");
+
+        assertEquals(-1,_testUndirGraph.pathLength(pathListTest));
+
+        testFillGraph(_testUndirGraph);
+
+        assertEquals(-1,_testUndirGraph.pathLength(pathListTest));
+
+        pathListTest.add("Hello");
+
+        assertEquals(-1, _testUndirGraph.pathLength(pathListTest));
+
+        pathListTest.remove("Below");
+
+        assertEquals(0, _testUndirGraph.pathLength(pathListTest));
+
+        pathListTest.add("my");
+        pathListTest.add("old");
+        pathListTest.add("friend.");
+        pathListTest.add("Perhaps");
+        pathListTest.add("it");
+        pathListTest.add("has");
+        pathListTest.add("been too long.");
+
+        assertEquals(259,_testUndirGraph.pathLength(pathListTest));
     }
 
+    @Test
+    public void testFromCSVFile() throws IOException {
+        Graph<String> csvDirGraph;
+        Scanner csvScan = new Scanner("");
+        String csvBadForm1 = "foo\n";
+        String csvBadForm2 = "foo\nbar\n";
+        String csvBadForm3 = "3\nfoo\nbar\nsparg\nprary";
+        String csvNoEdge = "3\nfoo\nbar\nblarg\n";
+        String csvGoodVBadE = "3\nfoo\nbar\nblarg\n5\nfoo,spar,1";
+        String csvGoodVBadE2 = "3\nfoo\nbar\nblarg\n1\nfoo,spar,1";
+        String csvGood = "3\nfoo\nbar\nblarg\n2\nfoo,bar,1\nblarg,foo,5";
+        boolean directedness = false;
+
+        try {
+            csvDirGraph = Graph.fromCSVFile(directedness, null);
+            fail();
+        }
+        catch (IOException e) {
+            // all good my dudes
+        }
+
+        try {
+            csvDirGraph = Graph.fromCSVFile(directedness, csvScan);
+            fail();
+        }
+        catch (IOException e) {
+            // all good my dudes
+        }
+
+        csvScan = new Scanner(csvBadForm1);
+
+        try {
+            csvDirGraph = Graph.fromCSVFile(directedness, csvScan);
+            fail();
+        }
+        catch (IOException e) {
+            // all good my dudes
+        }
+
+        csvScan = new Scanner(csvBadForm2);
+
+        try {
+            csvDirGraph = Graph.fromCSVFile(directedness, csvScan);
+            fail();
+        }
+        catch (IOException e) {
+            // all good my dudes
+        }
+
+        csvScan = new Scanner(csvBadForm3);
+
+        try {
+            csvDirGraph = Graph.fromCSVFile(directedness, csvScan);
+            fail();
+        }
+        catch (IOException e) {
+            // all good my dudes
+        }
+
+        csvScan = new Scanner(csvNoEdge);
+        csvDirGraph = Graph.fromCSVFile(directedness, csvScan);
+
+        System.out.println(csvDirGraph);
+        System.out.println();
+
+        csvScan = new Scanner(csvGoodVBadE);
+
+        try {
+            csvDirGraph = Graph.fromCSVFile(directedness, csvScan);
+            fail();
+        }
+        catch (IOException e) {
+            // all good my dudes
+        }
+
+        csvScan = new Scanner(csvGoodVBadE2);
+
+        try {
+            csvDirGraph = Graph.fromCSVFile(directedness, csvScan);
+            fail();
+        }
+        catch (IOException e) {
+            // all good my dudes
+        }
+
+        csvScan = new Scanner(csvGood);
+        csvDirGraph = Graph.fromCSVFile(directedness, csvScan);
+
+        System.out.println(csvDirGraph);
+    }
+
+    @Test
+    public void testShortestPathBetween() {
+        try {
+            _testDirGraph.shortestPathBetween(null, null);
+            fail();
+        }
+        catch (NoSuchElementException e) {} // boom baby
+
+        testFillGraph(_testDirGraph);
+
+        List<Graph.Edge<String>> shortPath = _testDirGraph.shortestPathBetween("Hello", "Hello");
+
+        int totalPathWeight = 0;
+        for (Graph.Edge<String> edge : shortPath) {
+            totalPathWeight += edge.getWeight();
+            System.out.println(edge);
+        }
+
+        assertEquals(0, totalPathWeight);
+
+        shortPath = _testDirGraph.shortestPathBetween
+                ("Hello", "been too long.");
+
+        totalPathWeight = 0;
+        for (Graph.Edge<String> edge : shortPath) {
+            totalPathWeight += edge.getWeight();
+            System.out.println(edge);
+        }
+
+        assertEquals(68, totalPathWeight);
+
+        shortPath = _testDirGraph.shortestPathBetween
+                ("been too long.", "Hello");
+
+        assertEquals(null, shortPath);
+    }
 
     @Test
     public void testToString() {
@@ -618,5 +778,11 @@ public class GraphTester {
         testGraph.addEdge("Hello", "old", 4);
         testGraph.addEdge("friend.", "it", 44);
         testGraph.addEdge("been too long.", "Perhaps", 2);
+        testGraph.addEdge("my", "old", 2);
+        testGraph.addEdge("old", "friend.", 6);
+        testGraph.addEdge("friend.", "Perhaps", 11);
+        testGraph.addEdge("Perhaps", "it", 224);
+        testGraph.addEdge("it", "has", 7);
+        testGraph.addEdge("has", "been too long.", 8);
     }
 }
