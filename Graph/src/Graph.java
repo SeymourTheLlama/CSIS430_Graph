@@ -28,6 +28,90 @@ public class Graph<T> {
 
 
     /**
+     * Factory method that constructs and populates a graph from the given
+     * input file. The file is assumed to have the following format:
+     *
+     * <# of vertices>
+     * <first vertex>
+     * <second vertex>
+     * ...
+     * <nth vertex>
+     * <# of edges>
+     * <source>,<destination>,<weight>
+     * <source>,<destination>,<weight>
+     * ...
+     *
+     * such as:
+     *
+     * 3
+     * v1
+     * v2
+     * v3
+     * 2
+     * v1,v3,5
+     * v2,v1,1
+     *
+     * @param isDirected if the graph to be constructed should be directed or
+     *                  not
+     * @param inputFile the file to construct a graph from. it should be
+     *                  formatted as shown in the main javadoc.
+     * @return graph constructed as per the CSV file's contents
+     * @throws IOException if an error is detected with the user's file
+     */
+    public static Graph<String> fromCSVFile(boolean isDirected,
+                                            Scanner inputFile)
+                                                throws IOException {
+        if (inputFile == null) {
+            throw new IOException();
+        }
+
+        Scanner lineReader;
+        int numVertices;
+        int numEdges ;
+        Graph<String> csvGraph = new Graph<>(isDirected);
+
+        try {
+            // add vertices
+            // first value in the list should be the number of vertices
+            numVertices = inputFile.nextInt();
+            inputFile.nextLine();
+
+            // iterate over the number of vertices in the graph
+            for (int i = 0; i < numVertices; i++) {
+                csvGraph.addVertex(inputFile.nextLine());
+            }
+
+            // add edges
+            // next value should be the number of edges
+            if (inputFile.hasNextInt()) {
+                numEdges = inputFile.nextInt();
+                inputFile.nextLine();
+
+                // iterate over the number of vertices in the graph
+                for (int i = 0; i < numEdges; i++) {
+                    lineReader = new Scanner(inputFile.nextLine());
+                    lineReader.useDelimiter(",");
+                    csvGraph.addEdge(lineReader.next(), lineReader.next(),
+                            lineReader.nextInt());
+                }
+            }
+            // if it has more elements but not a starting int, then they have
+            // more vertices that they said they would.
+            else if (inputFile.hasNext()) {
+                throw new IOException();
+            }
+        }
+        catch (NumberFormatException | ClassCastException |
+                NoSuchElementException e) {
+            throw new IOException();
+        }
+
+        return csvGraph;
+    }
+
+
+
+    /**
      * Returns a sequence of the graph's vertices.
      *
      * @return a sequence of the graph's vertices.
@@ -56,6 +140,73 @@ public class Graph<T> {
         }
 
         return returnWeight;
+    }
+
+
+    /**
+     * Returns the edge from the given edge than the given destination.
+     *
+     * @param source source of the edge to return
+     * @param destination destination of the edge to return
+     * @return null if no such edge exists, otherwise returns an edge object
+     */
+    public Edge<T> getEdge(T source, T destination) {
+        Edge<T> returnEdge = null;
+
+        // if the edge exists, create an edge from the source and destination
+        // given.
+        if (edgeExists(source, destination)) {
+            returnEdge = new Edge<>(source, destination,
+                    getEdgeWeight(source, destination));
+        }
+
+        // returns null if no edge exists
+        return returnEdge;
+    }
+
+
+    /**
+     * Returns a list of all the edges in the graph. For an undirected graph,
+     * this only returns one direction instead of both.
+     *
+     * @return list of the edges in the graph.
+     */
+    public List<Edge<T>> getEdges() {
+        // DIRECTED
+        // for every source vertex
+        // for every destination vertex
+        // append source, dest, weight as Edge
+
+        // UNDIRECTED
+        // for every source vertex
+        // for every destination vertex
+        // if not already added
+        // - edgeList.contains -- time O(n) space O(1)
+        // - hashSet addedEdges.contains -- time O(1) space O(n)++
+        // append source, dest, weight as Edge
+
+        HashSet<Edge<T>> edgeList = new HashSet<>();
+        Edge<T> currentEdge;
+        Edge<T> undirEdge;
+
+        // for every source vertex
+        for (T source : _graph.keySet()) {
+            // for every destination vertex
+            for (T dest : _graph.get(source).keySet()) {
+                currentEdge = new Edge<>(source, dest,
+                        getEdgeWeight(source, dest));
+                undirEdge = new Edge<>(dest, source,
+                        getEdgeWeight(dest, source));
+                // if this is a directed graph or this edge's reverse hasn't
+                // been added already
+                if (_isDirected || !edgeList.contains(currentEdge)) {
+                    // add edge to edge list
+                    edgeList.add(currentEdge);
+                }
+            }
+        }
+
+        return null;
     }
 
 
@@ -133,6 +284,7 @@ public class Graph<T> {
     }
 
 
+    // EDIT!!!!
     /**
      * Add an edge to the graph from the source vertex to the destination
      * with the given weight. If this is an undirected graph, than another
@@ -207,6 +359,7 @@ public class Graph<T> {
     }
 
 
+    // EDIT!!!!
     /**
      * Returns the length of the given set of vertices if they are a path
      * through the graph. If they are not a path or the list is empty, then
@@ -217,7 +370,8 @@ public class Graph<T> {
      * otherwise
      */
     public long pathLength(List<T> pathList) {
-        long length = -1;
+        final long NO_PATH_EXISTS = -1;
+        long length = NO_PATH_EXISTS;
         boolean isPath = true;
         int pathIndex = 0;
         T currentVertex = null;
@@ -254,7 +408,7 @@ public class Graph<T> {
         return length;
     }
 
-
+    // EDIT EDIT EDIT!!!!!!!!!!!!!
     /**
      * Finds the shortest path between the source and the destination
      * vertices. Returns null if no path exists.
@@ -378,83 +532,27 @@ public class Graph<T> {
 
 
     /**
-     * Factory method that constructs and populates a graph from the given
-     * input file. The file is assumed to have the following format:
+     * Returns the minimum spanning tree of this graph, if undirected. If
+     * directed, it throws an IllegalStateException. This uses Prim's
+     * Algorithm, and as such is better for dense graphs. Returns null if no
+     * spanning tree exists.
      *
-     * <# of vertices>
-     * <first vertex>
-     * <second vertex>
-     * ...
-     * <nth vertex>
-     * <# of edges>
-     * <source>,<destination>,<weight>
-     * <source>,<destination>,<weight>
-     * ...
-     *
-     * such as:
-     *
-     * 3
-     * v1
-     * v2
-     * v3
-     * 2
-     * v1,v3,5
-     * v2,v1,1
-     *
-     * @param isDirected if the graph to be constructed should be directed or
-     *                  not
-     * @param inputFile the file to construct a graph from. it should be
-     *                  formatted as shown in the main javadoc.
-     * @return graph constructed as per the CSV file's contents
-     * @throws IOException if an error is detected with the user's file
+     * @return a graph representation of a minimum spanning tree of this
+     * graph. null if no spanning tree exists
+     * @throws IllegalStateException if this graph is directed.
      */
-    public static Graph<String> fromCSVFile(boolean isDirected, Scanner inputFile) throws IOException {
-        if (inputFile == null) {
-            throw new IOException();
-        }
+    public Graph<T> minimumSpanningTree() throws IllegalStateException {
+        // PRIM
+        // minSpanTree graph contains first vertex
+        // priority queue contains every edge from every vertex in minSpanTree
+        // repeat |V| - 1 times
+            // poll priority queue, getting the next nearest edge
+                // if no edge found, this is an unconnected graph
+            // add the destination vertex to the minSpanTree
+            // add all edges that go from the destination vertex to vertices
+                // not already in the minSpanTree to the priority queue
 
-        Scanner lineReader;
-        int numVertices;
-        int numEdges ;
-        Graph<String> csvGraph = new Graph<>(isDirected);
-
-        try {
-            // add vertices
-            // first value in the list should be the number of vertices
-            numVertices = inputFile.nextInt();
-            inputFile.nextLine();
-
-            // iterate over the number of vertices in the graph
-            for (int i = 0; i < numVertices; i++) {
-                csvGraph.addVertex(inputFile.nextLine());
-            }
-
-            // add edges
-            // next value should be the number of edges
-            if (inputFile.hasNextInt()) {
-                numEdges = inputFile.nextInt();
-                inputFile.nextLine();
-
-                // iterate over the number of vertices in the graph
-                for (int i = 0; i < numEdges; i++) {
-                    lineReader = new Scanner(inputFile.nextLine());
-                    lineReader.useDelimiter(",");
-                    csvGraph.addEdge(lineReader.next(), lineReader.next(),
-                            lineReader.nextInt());
-                }
-            }
-            // if it has more elements but not a starting int, then they have
-            // more vertices that they said they would.
-            else if (inputFile.hasNext()) {
-                throw new IOException();
-            }
-        }
-        catch (NumberFormatException | ClassCastException |
-                NoSuchElementException e) {
-            throw new IOException();
-        }
-
-        return csvGraph;
+        return null;
     }
 
 
@@ -468,6 +566,12 @@ public class Graph<T> {
     }
 
 
+    /**
+     * Inner class that simplifies the external representation of edges.
+     * Originally intended for use with the Graph class.
+     *
+     * @param <E> parameter type of vertices in this edge
+     */
     public static class Edge<E> implements Comparable<Edge<E>>{
         private E _source;
         private E _destination;
