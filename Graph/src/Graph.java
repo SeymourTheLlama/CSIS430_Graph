@@ -186,27 +186,24 @@ public class Graph<T> {
         // append source, dest, weight as Edge
 
         HashSet<Edge<T>> edgeList = new HashSet<>();
-        Edge<T> currentEdge;
-        Edge<T> undirEdge;
 
         // for every source vertex
         for (T source : _graph.keySet()) {
             // for every destination vertex
             for (T dest : _graph.get(source).keySet()) {
-                currentEdge = new Edge<>(source, dest,
-                        getEdgeWeight(source, dest));
-                undirEdge = new Edge<>(dest, source,
-                        getEdgeWeight(dest, source));
                 // if this is a directed graph or this edge's reverse hasn't
                 // been added already
-                if (_isDirected || !edgeList.contains(currentEdge)) {
+                if (_isDirected || !edgeList.contains(new Edge<>(dest, source,
+                        getEdgeWeight(dest, source)))) {
                     // add edge to edge list
-                    edgeList.add(currentEdge);
+                    edgeList.add(new Edge<>(source, dest,
+                            getEdgeWeight(source, dest)));
                 }
             }
         }
 
-        return null;
+        // now turn that hashSet into a List
+        return new ArrayList<>(edgeList);
     }
 
 
@@ -428,9 +425,6 @@ public class Graph<T> {
         PriorityQueue<Edge<T>> frontier = new PriorityQueue<>();
         T currentVertex = null;
         Edge<T> currentEdge = new Edge<>(null, source, 0);
-        boolean destFound = false;
-        boolean graphSearched = false;
-        boolean newEdge = false;
         int pathWeight;
 
         // if source and destination vertices not in graph, throw exception
@@ -443,88 +437,68 @@ public class Graph<T> {
         connectedElements.put(source, currentEdge);
         currentVertex = source;
 
-        if (source == destination) {
-            destFound = true;
-        }
+        // graph has been searched if:
+            // the frontier is empty after we've gone through once
+            // the frontier only contains vertices that already exist in the
+                // connected elements list
+        // destination has been found if
+            // source == destination
+            // destination is in connected elements
 
-        while (!graphSearched && !destFound) {
-            newEdge = false;
+        if (source != destination) {
+            do {
+                // add every edge connected to the recent new addition to the
+                // connectedElements set
+                for (T vertex : _graph.get(currentVertex).keySet()) {
+                    if (!connectedElements.containsKey(vertex)) {
+                        // add the weight of the nearest edge added to the weight
+                        // of the path taken to reach this point
+                        pathWeight = getEdgeWeight(currentVertex, vertex) +
+                                connectedElements.get(currentVertex).getWeight();
 
-            // if the graphSearched flag isn't turned back to false by a new
-            // edge being added to the frontier, then we must be done.
-            graphSearched = true;
-
-            // add every edge connected to the recent new addition to the
-            // connectedElements set
-            for (T vertex : _graph.get(currentVertex).keySet()) {
-                if (!connectedElements.containsKey(vertex)) {
-                    // add the weight of the nearest edge added to the weight
-                    // of the path taken to reach this point
-                    pathWeight = getEdgeWeight(currentVertex, vertex) +
-                            connectedElements.get(currentVertex).getWeight();
-
-                    // add the edge to the frontier with the correct weight
-                    frontier.offer(new Edge<>(currentVertex, vertex,
-                            pathWeight));
-
-                    // since we have just added a new element to the
-                    // frontier, there is more yet to do before the graph is
-                    // completely searched
-                    graphSearched = false;
+                        // add the edge to the frontier with the correct weight
+                        frontier.offer(new Edge<>(currentVertex, vertex,
+                                pathWeight));
+                    }
                 }
-            }
 
-            // the edge with the least total pathWeight is the next to add to
-            // connectedVertices
-            while (!frontier.isEmpty() && !newEdge) {
-                // if the edge to add wouldn't connect to something already
-                // connected
-                if (!connectedElements.containsKey(
-                        frontier.peek().getDestination())) {
-                    // define it as the next edge to work with
-                    currentEdge = frontier.poll();
-                    // we have our new edge, and we can stop the while loop
-                    newEdge = true;
-                } else {
-                    // we don't want duplicate edges, so ditch it
-                    frontier.poll();
+                // the edge with the least total pathWeight is the next to add to
+                // connectedVertices
+                do {
+                        // define it as the next edge to work with
+                        currentEdge = frontier.poll();
                 }
+                while (!frontier.isEmpty() && connectedElements.containsKey(
+                        frontier.peek().getDestination()));
+
+                // add the edge and its destination vertex to the connected elements
+                currentVertex = currentEdge.getDestination();
+                connectedElements.put(currentVertex, currentEdge);
+            }
+            while (!frontier.isEmpty() &&
+                    !connectedElements.containsKey(destination));
+
+
+            // when we first hit this, the current vertex will be the destination
+            // and the current edge will be the path taken to get there.
+            while (currentEdge.getSource() != null &&
+                    connectedElements.containsKey(destination)) {
+                // add the current edge to shortest path, but with the proper
+                // weight from the graph itself.
+                shortestPath.add(new Edge<>(currentEdge.getSource(), currentVertex,
+                        getEdgeWeight(currentEdge.getSource(), currentVertex)));
+
+                // reset current edge as the edge connecting to it
+                currentVertex = currentEdge.getSource();
+                currentEdge = connectedElements.get(currentVertex);
             }
 
-            // if the frontier is empty or had no non-duplicate vertices, then
-            // the graph has been searched already.
-            if (!newEdge) {
-                graphSearched = true;
+            Collections.reverse(shortestPath);
+
+            // if no destination was ever found, then return null
+            if (!connectedElements.containsKey(destination)) {
+                shortestPath = null;
             }
-
-            // add the edge and its destination vertex to the connected elements
-            currentVertex = currentEdge.getDestination();
-            connectedElements.put(currentVertex, currentEdge);
-
-            // if the current vertex is the destination, we are done
-            if (currentVertex.equals(destination)) {
-                destFound = true;
-            }
-        }
-
-        // when we first hit this, the current vertex will be the destination
-        // and the current edge will be the path taken to get there.
-        while (currentEdge.getSource() != null && !graphSearched) {
-            // add the current edge to shortest path, but with the proper
-            // weight from the graph itself.
-            shortestPath.add(new Edge<>(currentEdge.getSource(), currentVertex,
-                    getEdgeWeight(currentEdge.getSource(), currentVertex)));
-
-            // reset current edge as the edge connecting to it
-            currentVertex = currentEdge.getSource();
-            currentEdge = connectedElements.get(currentVertex);
-        }
-
-        Collections.reverse(shortestPath);
-
-        // if no destination was ever found, then return null
-        if (!destFound) {
-            shortestPath = null;
         }
 
         return shortestPath;
@@ -552,7 +526,71 @@ public class Graph<T> {
             // add all edges that go from the destination vertex to vertices
                 // not already in the minSpanTree to the priority queue
 
-        return null;
+        // cannot be directed
+        if (_isDirected) {
+            throw new IllegalStateException();
+        }
+
+        Graph<T> minSpanTree = new Graph<>(false);
+        PriorityQueue<Edge<T>> edgeQueue = new PriorityQueue<>();
+        T currentVertex = null;
+        Edge<T> currentEdge = null;
+        boolean graphUnconnected = false;
+
+        // if the graph isn't empty
+        if (_graph.size() > 0) {
+            // pick a vertex to add to the min span tree
+            currentVertex = getVertices().get(0);
+            // add that vertex to the minimum spanning tree
+            minSpanTree.addVertex(currentVertex);
+
+            // for as many vertices as there are in the graph
+            for (int i = 0; i < _graph.keySet().size(); i++) {
+
+                // for every edge connected to the most recently added vertex
+                for (T destination : _graph.get(currentVertex).keySet()) {
+                    // if the destination of the edge coming from the current
+                    // vertex is not already in the minimum spanning tree
+                    if (!minSpanTree.vertexExists(destination)) {
+                        // add the edge from the most recently added vertex to a
+                        // vertex not in the minSpanTree to the priority queue.
+                        edgeQueue.offer(new Edge<>(currentVertex, destination,
+                                getEdgeWeight(currentVertex, destination)));
+                    }
+                }
+
+                // the next edge to add to the minimum spanning tree is the edge
+                // currently connected to the min span tree by only one vertex
+                // that also has the lowest weight.
+
+                while (!edgeQueue.isEmpty() && !minSpanTree.vertexExists(
+                            edgeQueue.peek().getDestination())) {
+                    currentEdge = edgeQueue.poll();
+                }
+
+
+                //if (currentEdge != null) {
+                if (currentEdge != null && !minSpanTree.vertexExists(
+                        currentEdge.getDestination())) {
+                    // add this edge to the min span tree
+                    minSpanTree.addVertex(currentEdge.getDestination());
+                    minSpanTree.addEdge(currentEdge);
+
+                    // the most recently added vertex to the min span tree is now the
+                    // destination of the recently added edge.
+                    currentVertex = currentEdge.getDestination();
+                }
+                else {
+                    graphUnconnected = true;
+                }
+            }
+        }
+
+        if (graphUnconnected) {
+            minSpanTree = null;
+        }
+
+        return minSpanTree;
     }
 
 
@@ -565,6 +603,33 @@ public class Graph<T> {
         return "Directed: " + _isDirected + " " + _graph.toString();
     }
 
+
+    /**
+     * Returns true if the vertex is in the graph, false otherwise.
+     *
+     * @param vertex vertex to check existence of
+     * @return true if vertex is in the graph, false otherwise.
+     */
+    private boolean vertexExists(T vertex) {
+        return _graph.containsKey(vertex);
+    }
+
+
+    /**
+     * Overloads addEdge to work with the Edge class
+     *
+     * @param edgeToAdd Edge<T> to add
+     * @throws IllegalArgumentException when null is given as the edge to add
+     */
+    private void addEdge(Edge<T> edgeToAdd) throws IllegalArgumentException{
+        if (edgeToAdd == null) {
+            throw new IllegalArgumentException();
+        }
+        else {
+            addEdge(edgeToAdd.getSource(), edgeToAdd.getDestination(),
+                    edgeToAdd.getWeight());
+        }
+    }
 
     /**
      * Inner class that simplifies the external representation of edges.

@@ -377,12 +377,27 @@ public class GraphTester {
             System.out.println(edge);
         }
 
-        assertEquals(68, totalPathWeight);
+        assertEquals(69, totalPathWeight);
 
         shortPath = _testDirGraph.shortestPathBetween
                 ("been too long.", "Hello");
 
         assertEquals(null, shortPath);
+    }
+
+    @Test
+    public void testMinimumSpanningTree() {
+        System.out.println(_testUndirGraph.minimumSpanningTree());
+
+        try {
+            System.out.println(_testDirGraph.minimumSpanningTree());
+            fail();
+        }
+        catch (IllegalStateException e) {} // all is well
+
+        testFillGraph(_testUndirGraph);
+
+        System.out.println(_testUndirGraph.minimumSpanningTree());
     }
 
     @Test
