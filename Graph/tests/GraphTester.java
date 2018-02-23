@@ -1,18 +1,17 @@
 import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import org.junit.*;
+import org.xml.sax.SAXException;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Scanner;
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.*;
+import java.util.*;
 
 import static org.junit.Assert.*;
 
 public class GraphTester {
 
-    Graph<String> _testDirGraph;
-    Graph<String> _testUndirGraph;
+    private Graph<String> _testDirGraph;
+    private Graph<String> _testUndirGraph;
 
     @Before
     public void setup() {
@@ -271,14 +270,6 @@ public class GraphTester {
         boolean directedness = false;
 
         try {
-            csvDirGraph = Graph.fromCSVFile(directedness, null);
-            fail();
-        }
-        catch (IOException e) {
-            // all good my dudes
-        }
-
-        try {
             csvDirGraph = Graph.fromCSVFile(directedness, csvScan);
             fail();
         }
@@ -346,6 +337,11 @@ public class GraphTester {
         csvDirGraph = Graph.fromCSVFile(directedness, csvScan);
 
         System.out.println(csvDirGraph);
+
+        csvScan = new Scanner(new File("Campus_Map.csv"));
+        csvDirGraph = Graph.fromCSVFile(false, csvScan);
+
+        System.out.println(csvDirGraph);
     }
 
     @Test
@@ -377,7 +373,7 @@ public class GraphTester {
             System.out.println(edge);
         }
 
-        assertEquals(69, totalPathWeight);
+        assertEquals(68, totalPathWeight);
 
         shortPath = _testDirGraph.shortestPathBetween
                 ("been too long.", "Hello");
@@ -398,6 +394,37 @@ public class GraphTester {
         testFillGraph(_testUndirGraph);
 
         System.out.println(_testUndirGraph.minimumSpanningTree());
+    }
+
+
+    @Test
+    public void testOptimalPath() {
+        testFullyConnectGraph(_testUndirGraph);
+        System.out.println(_testUndirGraph.getOptimalTour(20, (float)0.02,
+                1000));
+
+
+        try {
+            _testUndirGraph = Graph.fromTSPFile(new FileInputStream(new File
+                    ("eil101.xml")));
+        }
+        catch (IOException|SAXException|ParserConfigurationException e) {
+            fail();
+        } // rur roh
+
+        System.out.println(_testUndirGraph.getOptimalTour(100, (float)0.02,
+                5000));
+
+        try {
+            _testUndirGraph = Graph.fromTSPFile(new FileInputStream(new File
+                    ("kroA100.xml")));
+        }
+        catch (IOException|SAXException|ParserConfigurationException e) {
+            fail();
+        } // rur roh
+
+        System.out.println(_testUndirGraph.getOptimalTour(100, (float)0.02,
+                5000));
     }
 
     @Test
@@ -553,19 +580,19 @@ public class GraphTester {
             testGraph.addEdge(null, null, 2);
             fail();
         }
-        catch (IllegalArgumentException e) {} // all is well
+        catch (NoSuchElementException e) {} // all is well
 
         try {
             testGraph.addEdge(null, "Bellow", 2);
             fail();
         }
-        catch (IllegalArgumentException e) {} // all is well
+        catch (NoSuchElementException e) {} // all is well
 
         try {
             testGraph.addEdge("Bellow", null,2);
             fail();
         }
-        catch (IllegalArgumentException e) {} // all is well
+        catch (NoSuchElementException e) {} // all is well
 
         try {
             testGraph.addEdge("Bellow", "Fellow",2);
@@ -581,19 +608,19 @@ public class GraphTester {
             testGraph.addEdge(null, null, 2);
             fail();
         }
-        catch (IllegalArgumentException e) {} // all is well
+        catch (NoSuchElementException e) {} // all is well
 
         try {
             testGraph.addEdge(null, "Bellow", 2);
             fail();
         }
-        catch (IllegalArgumentException e) {} // all is well
+        catch (NoSuchElementException e) {} // all is well
 
         try {
             testGraph.addEdge("Bellow", null,2);
             fail();
         }
-        catch (IllegalArgumentException e) {} // all is well
+        catch (NoSuchElementException e) {} // all is well
 
         try {
             testGraph.addEdge("Bellow", "Fellow",2);
@@ -638,19 +665,19 @@ public class GraphTester {
             testGraph.addEdge(null, null, 2);
             fail();
         }
-        catch (IllegalArgumentException e) {} // all is well
+        catch (NoSuchElementException e) {} // all is well
 
         try {
             testGraph.addEdge(null, "Bellow", 2);
             fail();
         }
-        catch (IllegalArgumentException e) {} // all is well
+        catch (NoSuchElementException e) {} // all is well
 
         try {
             testGraph.addEdge("Bellow", null,2);
             fail();
         }
-        catch (IllegalArgumentException e) {} // all is well
+        catch (NoSuchElementException e) {} // all is well
 
         try {
             testGraph.addEdge("Bellow", "Fellow",2);
@@ -799,5 +826,41 @@ public class GraphTester {
         testGraph.addEdge("Perhaps", "it", 224);
         testGraph.addEdge("it", "has", 7);
         testGraph.addEdge("has", "been too long.", 8);
+    }
+
+    private void testFullyConnectGraph(Graph testGraph) {
+        testGraph.addVertex("Hello");
+        testGraph.addVertex("my");
+        testGraph.addVertex("old");
+        testGraph.addVertex("friend.");
+        testGraph.addVertex("Perhaps");
+        testGraph.addVertex("it");
+        testGraph.addVertex("has");
+        testGraph.addVertex("been too long.");
+
+        testGraph.addEdge("Hello", "my", 2);
+        testGraph.addEdge("Hello", "old", 5);
+        testGraph.addEdge("Hello", "friend.", 33);
+        testGraph.addEdge("Hello", "Perhaps", 1);
+        testGraph.addEdge("Hello", "it", 5);
+        testGraph.addEdge("Hello", "has", 60);
+        testGraph.addEdge("Hello", "been too long.", 19);
+        testGraph.addEdge("my", "old", 22);
+        testGraph.addEdge("my", "friend.", 9);
+        testGraph.addEdge("my", "Perhaps", 11);
+        testGraph.addEdge("my", "it", 24);
+        testGraph.addEdge("my", "has", 8);
+        testGraph.addEdge("my", "been too long.", 6);
+        testGraph.addEdge("old", "friend.", 4);
+        testGraph.addEdge("old", "Perhaps", 31);
+        testGraph.addEdge("old", "it", 17);
+        testGraph.addEdge("old", "has", 63);
+        testGraph.addEdge("old", "been too long.", 2);
+        testGraph.addEdge("Perhaps", "it", 1);
+        testGraph.addEdge("Perhaps", "has", 3);
+        testGraph.addEdge("Perhaps", "been too long.", 1);
+        testGraph.addEdge("it", "has", 8);
+        testGraph.addEdge("it", "been too long.", 44);
+        testGraph.addEdge("has", "been too long.", 100);
     }
 }

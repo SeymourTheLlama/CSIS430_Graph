@@ -1,4 +1,8 @@
 import java.io.IOException;
+import java.io.InputStream;
+import javax.xml.parsers.*;
+import org.xml.sax.*;
+import org.xml.sax.helpers.*;
 import java.util.*;
 
 /**
@@ -61,49 +65,45 @@ public class Graph<T> {
     public static Graph<String> fromCSVFile(boolean isDirected,
                                             Scanner inputFile)
                                                 throws IOException {
-        if (inputFile == null) {
-            throw new IOException();
-        }
-
         Scanner lineReader;
         int numVertices;
         int numEdges ;
         Graph<String> csvGraph = new Graph<>(isDirected);
 
-        try {
-            // add vertices
-            // first value in the list should be the number of vertices
-            numVertices = inputFile.nextInt();
-            inputFile.nextLine();
-
-            // iterate over the number of vertices in the graph
-            for (int i = 0; i < numVertices; i++) {
-                csvGraph.addVertex(inputFile.nextLine());
-            }
-
-            // add edges
-            // next value should be the number of edges
-            if (inputFile.hasNextInt()) {
-                numEdges = inputFile.nextInt();
+        if (inputFile != null) {
+            try {
+                // add vertices
+                // first value in the list should be the number of vertices
+                numVertices = inputFile.nextInt();
                 inputFile.nextLine();
 
                 // iterate over the number of vertices in the graph
-                for (int i = 0; i < numEdges; i++) {
-                    lineReader = new Scanner(inputFile.nextLine());
-                    lineReader.useDelimiter(",");
-                    csvGraph.addEdge(lineReader.next(), lineReader.next(),
-                            lineReader.nextInt());
+                for (int i = 0; i < numVertices; i++) {
+                    csvGraph.addVertex(inputFile.nextLine());
                 }
-            }
-            // if it has more elements but not a starting int, then they have
-            // more vertices that they said they would.
-            else if (inputFile.hasNext()) {
+
+                // add edges
+                // next value should be the number of edges
+                if (inputFile.hasNextInt()) {
+                    numEdges = inputFile.nextInt();
+                    inputFile.nextLine();
+
+                    // iterate over the number of vertices in the graph
+                    for (int i = 0; i < numEdges; i++) {
+                        lineReader = new Scanner(inputFile.nextLine());
+                        lineReader.useDelimiter(",");
+                        csvGraph.addEdge(lineReader.next(), lineReader.next(),
+                                lineReader.nextInt());
+                    }
+                }
+                // if it has more elements but not a starting int, then they
+                // have more vertices that they said they would.
+                else if (inputFile.hasNext()) {
+                    throw new IOException();
+                }
+            } catch (NumberFormatException | NoSuchElementException e) {
                 throw new IOException();
             }
-        }
-        catch (NumberFormatException | ClassCastException |
-                NoSuchElementException e) {
-            throw new IOException();
         }
 
         return csvGraph;
@@ -172,19 +172,6 @@ public class Graph<T> {
      * @return list of the edges in the graph.
      */
     public List<Edge<T>> getEdges() {
-        // DIRECTED
-        // for every source vertex
-        // for every destination vertex
-        // append source, dest, weight as Edge
-
-        // UNDIRECTED
-        // for every source vertex
-        // for every destination vertex
-        // if not already added
-        // - edgeList.contains -- time O(n) space O(1)
-        // - hashSet addedEdges.contains -- time O(1) space O(n)++
-        // append source, dest, weight as Edge
-
         HashSet<Edge<T>> edgeList = new HashSet<>();
 
         // for every source vertex
@@ -281,7 +268,6 @@ public class Graph<T> {
     }
 
 
-    // EDIT!!!!
     /**
      * Add an edge to the graph from the source vertex to the destination
      * with the given weight. If this is an undirected graph, than another
@@ -300,13 +286,12 @@ public class Graph<T> {
 
         // if this would be a loop or the source or destination is null,
         // throw an exception
-        if (source == null || destination == null
-                || source == destination) {
-            throw new IllegalArgumentException();
-        }
-        else if (!_graph.containsKey(source) ||
+        if (!_graph.containsKey(source) ||
                 !_graph.containsKey(destination)) {
             throw new NoSuchElementException();
+        }
+        else if (source.equals(destination)) {
+            throw new IllegalArgumentException();
         }
 
         // if the edge does not yet exist
@@ -356,7 +341,6 @@ public class Graph<T> {
     }
 
 
-    // EDIT!!!!
     /**
      * Returns the length of the given set of vertices if they are a path
      * through the graph. If they are not a path or the list is empty, then
@@ -368,11 +352,20 @@ public class Graph<T> {
      */
     public long pathLength(List<T> pathList) {
         final long NO_PATH_EXISTS = -1;
-        long length = NO_PATH_EXISTS;
+        long length = 0;
         boolean isPath = true;
         int pathIndex = 0;
         T currentVertex = null;
         T lastVertex = null;
+
+        // skips the check if an empty set is given
+        if (pathList.size() == 0) {
+            isPath = false;
+        }
+        // initializes the lastVertex to the first vertex in the array.
+        else {
+            lastVertex = pathList.get(0);
+        }
 
         // for each element in the path list
         while (isPath && pathIndex < pathList.size()) {
@@ -381,31 +374,25 @@ public class Graph<T> {
             // if the vertex does not exist in the graph
             if (!_graph.containsKey(currentVertex)) {
                 isPath = false;
-                length = -1;
-            }
-            // if this is the first element, set length to 0
-            else if (pathList.get(0) == currentVertex) {
-                length = 0;
             }
             // if an edge exists from the last vertex to this one, add its
             // weight to the length
             else if (_graph.get(lastVertex).containsKey(currentVertex)) {
                 length += getEdgeWeight(lastVertex, currentVertex);
             }
-            else {
-                isPath = false;
-                length = -1;
-            }
 
             pathIndex++;
             lastVertex = currentVertex;
         }
 
+        if (!isPath) {
+            length = NO_PATH_EXISTS;
+        }
 
         return length;
     }
 
-    // EDIT EDIT EDIT!!!!!!!!!!!!!
+
     /**
      * Finds the shortest path between the source and the destination
      * vertices. Returns null if no path exists.
@@ -435,24 +422,47 @@ public class Graph<T> {
 
         // otherwise, start with the source and begin finding neighbors.
         connectedElements.put(source, currentEdge);
-        currentVertex = source;
 
-        // graph has been searched if:
-            // the frontier is empty after we've gone through once
-            // the frontier only contains vertices that already exist in the
-                // connected elements list
-        // destination has been found if
-            // source == destination
-            // destination is in connected elements
-
+        // this allows the special case of an empty set, given source ==
+        // destination
         if (source != destination) {
+            // find the neighbors of the source and add them to the frontier
+            for (T vertex : _graph.get(source).keySet()) {
+                if (!connectedElements.containsKey(vertex)) {
+                    // add the weight of the nearest edge added to the
+                    // weight of the path taken to reach this point
+                    pathWeight = getEdgeWeight(source, vertex) +
+                            connectedElements.get(source).getWeight();
+
+                    // add the edge to the frontier with the correct weight
+                    frontier.offer(new Edge<>(source, vertex,
+                            pathWeight));
+                }
+            }
+
+            // this loops until the graph has been searched or the
+            // destination has been found.
             do {
+                // the edge with the least total pathWeight is the next to add
+                // to connectedVertices
+                do {
+                    // define it as the next edge to work with
+                    currentEdge = frontier.poll();
+                }
+                while (!frontier.isEmpty() && connectedElements.containsKey(
+                        currentEdge.getDestination()));
+
+                // add the edge and its destination vertex to the
+                // connectedElements set
+                currentVertex = currentEdge.getDestination();
+                connectedElements.put(currentVertex, currentEdge);
+
                 // add every edge connected to the recent new addition to the
                 // connectedElements set
                 for (T vertex : _graph.get(currentVertex).keySet()) {
                     if (!connectedElements.containsKey(vertex)) {
-                        // add the weight of the nearest edge added to the weight
-                        // of the path taken to reach this point
+                        // add the weight of the nearest edge added to the
+                        // weight of the path taken to reach this point
                         pathWeight = getEdgeWeight(currentVertex, vertex) +
                                 connectedElements.get(currentVertex).getWeight();
 
@@ -461,20 +471,10 @@ public class Graph<T> {
                                 pathWeight));
                     }
                 }
-
-                // the edge with the least total pathWeight is the next to add to
-                // connectedVertices
-                do {
-                        // define it as the next edge to work with
-                        currentEdge = frontier.poll();
-                }
-                while (!frontier.isEmpty() && connectedElements.containsKey(
-                        frontier.peek().getDestination()));
-
-                // add the edge and its destination vertex to the connected elements
-                currentVertex = currentEdge.getDestination();
-                connectedElements.put(currentVertex, currentEdge);
             }
+            // if the frontier has had no new elements added and is empty,
+            // then the graph is unconnected. If the destination has been
+            // found, then the shortest path has been found and this can exit.
             while (!frontier.isEmpty() &&
                     !connectedElements.containsKey(destination));
 
@@ -493,6 +493,8 @@ public class Graph<T> {
                 currentEdge = connectedElements.get(currentVertex);
             }
 
+            // the shortest path was just built in reverse, and now it needs
+            // to be reversed back to look proper.
             Collections.reverse(shortestPath);
 
             // if no destination was ever found, then return null
@@ -516,16 +518,6 @@ public class Graph<T> {
      * @throws IllegalStateException if this graph is directed.
      */
     public Graph<T> minimumSpanningTree() throws IllegalStateException {
-        // PRIM
-        // minSpanTree graph contains first vertex
-        // priority queue contains every edge from every vertex in minSpanTree
-        // repeat |V| - 1 times
-            // poll priority queue, getting the next nearest edge
-                // if no edge found, this is an unconnected graph
-            // add the destination vertex to the minSpanTree
-            // add all edges that go from the destination vertex to vertices
-                // not already in the minSpanTree to the priority queue
-
         // cannot be directed
         if (_isDirected) {
             throw new IllegalStateException();
@@ -544,8 +536,40 @@ public class Graph<T> {
             // add that vertex to the minimum spanning tree
             minSpanTree.addVertex(currentVertex);
 
+            // for every edge connected to the first vertex
+            for (T destination : _graph.get(currentVertex).keySet()) {
+                // if the destination of the edge coming from the first
+                // vertex is not already in the minimum spanning tree
+                if (!minSpanTree.vertexExists(destination)) {
+                    // add the edge from the first vertex to a vertex not in
+                    // the minSpanTree to the priority queue.
+                    edgeQueue.offer(new Edge<>(currentVertex, destination,
+                            getEdgeWeight(currentVertex, destination)));
+                }
+            }
+
             // for as many vertices as there are in the graph
-            for (int i = 0; i < _graph.keySet().size(); i++) {
+            for (int i = 0; i < _graph.keySet().size()-1; i++) {
+
+                // the next edge to add to the minimum spanning tree is the edge
+                // currently connected to the min span tree by only one vertex
+                // that also has the lowest weight.
+                do {
+                    currentEdge = edgeQueue.poll();
+                }
+                while (!edgeQueue.isEmpty() && minSpanTree.vertexExists(
+                        currentEdge.getDestination()));
+
+                // if the edgeQueue had anything in it, and the min span tree
+                // doesn't already contain the destination of the new edge
+
+                // add this edge to the min span tree
+                minSpanTree.addVertex(currentEdge.getDestination());
+                minSpanTree.addEdge(currentEdge);
+
+                // the most recently added vertex to the min span tree is now the
+                // destination of the recently added edge.
+                currentVertex = currentEdge.getDestination();
 
                 // for every edge connected to the most recently added vertex
                 for (T destination : _graph.get(currentVertex).keySet()) {
@@ -559,38 +583,190 @@ public class Graph<T> {
                     }
                 }
 
-                // the next edge to add to the minimum spanning tree is the edge
-                // currently connected to the min span tree by only one vertex
-                // that also has the lowest weight.
-
-                while (!edgeQueue.isEmpty() && !minSpanTree.vertexExists(
-                            edgeQueue.peek().getDestination())) {
-                    currentEdge = edgeQueue.poll();
-                }
-
-
-                //if (currentEdge != null) {
-                if (currentEdge != null && !minSpanTree.vertexExists(
-                        currentEdge.getDestination())) {
-                    // add this edge to the min span tree
-                    minSpanTree.addVertex(currentEdge.getDestination());
-                    minSpanTree.addEdge(currentEdge);
-
-                    // the most recently added vertex to the min span tree is now the
-                    // destination of the recently added edge.
-                    currentVertex = currentEdge.getDestination();
-                }
-                else {
+                // if there are no edges in the edgeQueue even after the most
+                // recently added vertex should have added some new ones, then
+                // this must be a disconnected graph
+                if (edgeQueue.isEmpty()) {
                     graphUnconnected = true;
                 }
             }
         }
 
+        // if the graph is unconnected, return null.
         if (graphUnconnected) {
             minSpanTree = null;
         }
 
         return minSpanTree;
+    }
+
+
+    /**
+     * Implements Tao and Michalewicz' Inver-Over genetic algorithm to find
+     * the optimal tour in this graph.
+     *
+     * The paper describing this algorithm can be found at:
+     * http://dl.acm.org/citation.cfm?id=668606
+     *
+     * N.B. This implementation of the Inver-Over algorithm only accepts
+     * fully connected graphs.
+     *
+     * @param populationSize number of solutions to maintain at a time
+     * @param inversionProbability probability that a current child will
+     *                             attempt to find new connections within the
+     *                             same solution tour.
+     * @param terminationIterations how many iterations to run before
+     *                              terminating
+     *
+     * @return a list of vertices that constitute the optimal tour through
+     * the graph.
+     */
+    public List<T> getOptimalTour(int populationSize,
+                                  float inversionProbability,
+                                  int terminationIterations) {
+        List<ArrayList<T>> population = new ArrayList<>();
+        ArrayList<T> solution = null;
+        ArrayList<T> childSolution = null;
+        ArrayList<T> compSolution = null;
+
+        T childVertex;
+        T compVertex;
+
+        int vertIndex = 0;
+        int tempIndex = 0;
+        int compIndex = 0;
+
+        int numInversions = 0;
+
+        long shortestPathLength = -1;
+        long compPathLength = -1;
+        List<T> shortestPath = null;
+
+        boolean compareCities = true;
+
+        // initialize population randomly
+        for (int i = 0; i < populationSize; i++) {
+            // create an arraylist with each element of the graph
+            solution = new ArrayList<>(_graph.keySet());
+            // shuffle that solution
+            Collections.shuffle(solution);
+            // add the solution to the population
+            population.add(solution);
+            // if this is the first solution, make it the shortest path
+            if (shortestPathLength == -1) {
+                shortestPathLength = pathLength(solution);
+                shortestPath = solution;
+            }
+            // if this is the new shortest path, make it the new shortest path
+            else if (shortestPathLength > pathLength(solution)) {
+                shortestPathLength = pathLength(solution);
+                shortestPath = solution;
+            }
+        }
+
+        // while the termination condition is not satisfied
+        for (int i = 0; i < terminationIterations; i++) {
+            // for each element of the population
+            for (int j = 0; j < populationSize; j++) {
+                solution = population.get(j);
+                // create childSolution as a clone of the current solution
+                childSolution = (ArrayList<T>) solution.clone();
+                // randomly select a city vertex from childSolution
+                vertIndex = (int) Math.round(Math.random()*(solution.size()-1));
+                childVertex = childSolution.get(vertIndex);
+                compareCities = true;
+                // repeat until the flag is tripped
+                while (compareCities) {
+                    // if a random number is less than the inversionProb
+                    if (Math.random() < inversionProbability) {
+                        // select comparison solution randomly from the other
+                        // cities in childSolution
+                        compSolution = childSolution;
+                        do {
+                            compIndex = (int) Math.round(Math.random()*
+                                    (solution.size()-1));
+                        }
+                        while (childSolution.get(vertIndex).equals
+                                (childSolution.get(compIndex)));
+                    }
+                    else {
+                        do {
+                            // randomly select an individual comparison
+                            // solution from the population
+                            compSolution = population.get((int) Math.round(
+                                    Math.random() * (populationSize - 1)));
+                        }
+                        while (compSolution.equals(solution));
+                        // assign the comparison city as the city following
+                        // the child city in the comparison solution
+                        if (compSolution.indexOf(childVertex) ==
+                                compSolution.size() - 1) {
+                            // if this is the last element, the 'next'
+                            // element is the first one
+                            compIndex = 0;
+                        }
+                        else {
+                            // otherwise it's the next element
+                            compIndex = compSolution.indexOf(childVertex) + 1;
+                        }
+                    }
+
+                    // temp index is the location of the comparison city in
+                    // the original child solution
+                    tempIndex = childSolution.indexOf(compSolution.get
+                            (compIndex));
+                    // if the original city and the comparison city are
+                    // adjacent in the original child solution, then end the
+                    // iteration
+                    if (vertIndex != 0 &&
+                            Math.abs(vertIndex - tempIndex) == 1) {
+                        compareCities = false;
+                    }
+                    else if (vertIndex == 0 && (tempIndex == childSolution
+                            .size() - 1 || tempIndex == vertIndex + 1)) {
+                        compareCities = false;
+                    }
+
+                    // invert the sequence between the child city and the
+                    // comparison city in the child solution
+                    if (vertIndex < tempIndex) {
+                        // this inverts if the child city is before the
+                        // comparison city in the child solution.
+                        Collections.reverse(childSolution.subList(vertIndex + 1,
+                                tempIndex + 1));
+                        numInversions++;
+                    }
+                    else if (vertIndex > tempIndex) {
+                        // this inverts if the child city is after the
+                        // comparison city in the child solution.
+                        Collections.reverse(childSolution.subList(tempIndex,
+                                vertIndex));
+                        numInversions++;
+                    }
+
+                    // set the child city to equal the comparison city
+                    vertIndex = childSolution.indexOf
+                            (compSolution.get(compIndex));
+                    childVertex = childSolution.get(vertIndex);
+                } // end repeat
+
+                // if the child solution is a shorter path than the original
+                // solution, replace the original solution with the child
+                compPathLength = pathLength(childSolution);
+                if (compPathLength < pathLength(solution)) {
+                    // sets the original solution to equal the child
+                    population.set(j, childSolution);
+                    // if this child is shorter than the current shortest path,
+                    // remember it as the new shortest path.
+                    if (compPathLength < shortestPathLength) {
+                        shortestPathLength = compPathLength;
+                        shortestPath = childSolution;
+                    }
+                }
+            } // end for
+        } // end for
+
+        return shortestPath;
     }
 
 
@@ -602,6 +778,188 @@ public class Graph<T> {
     public String toString() {
         return "Directed: " + _isDirected + " " + _graph.toString();
     }
+
+
+    /*
+     * Construct an undirected graph from an XML encoded TSP file
+     *
+     * @param inputFile an XML encoded TSP file from
+     *        <a href="http://comopt.ifi.uni-heidelberg.de/software/TSPLIB95/">
+     *        http://comopt.ifi.uni-heidelberg.de/software/TSPLIB95/</a>
+     *
+     * @return graph populated from the file
+     *
+     * @throws ParserConfigurationException, SAXException, IOException if
+     *         the file doesn't conform to the specification
+     */
+    public static Graph<String> fromTSPFile(InputStream inputFile)
+            throws ParserConfigurationException, SAXException, IOException {
+
+        /**
+         * The Handler for SAX Parser Events.
+         *
+         * This inner-class extends the default handler for the SAX parser
+         * to construct a graph from a TSP file
+         *
+         * @see org.xml.sax.helpers.DefaultHandler
+         */
+        class TSPGraphHandler extends DefaultHandler {
+            // Instantiate an undirected graph to populate; vertices are
+            // integers though we treat them as strings for extension to other
+            // similarly-formed files representing, say, GFU.
+            private Graph<String> _theGraph = new Graph<>(false);
+
+            private final int NO_WEIGHT = -1;
+            // As we parse we need to keep track of when we've seen
+            // vertices and edges
+            private int _sourceVertexNumber = 0;
+            private String _destinationVertexName = null;
+            private String _sourceVertexName = null;
+            private int _edgeWeight = NO_WEIGHT;
+            private boolean _inEdge = false;
+
+
+            /**
+             * Parser has seen an opening tag
+             *
+             * For a <pre>vertex</pre> tag we add the vertex to the graph
+             * the first time we encounter it.
+             * For an <pre>edge</pre> tag we remember the weight of the edge.
+             *
+             * {@inheritDoc}
+             */
+            @Override
+            public void startElement(String uri, String localName,
+                                     String qName, Attributes attributes) throws SAXException {
+
+                // We only care about vertex and edge elements
+                switch (qName) {
+
+                    case "vertex":
+                        // See if the vertices are named; if so, use the
+                        // name, otherwise use the number
+                        _sourceVertexName = attributes.getValue("name");
+                        if (_sourceVertexName == null) {
+                            _sourceVertexName = Integer.toString(_sourceVertexNumber);
+                        }
+                        // If is vertex 0 then it's the first time we're seeing it;
+                        // add it to the graph. Other vertices will be added
+                        // as we encounter their edges
+                        if (_sourceVertexNumber == 0) {
+                            _theGraph.addVertex(_sourceVertexName);
+                        }
+                        break;
+
+                    case "edge":
+                        // Edges have the destination vertex within so
+                        // indicate that we're inside an edge so that the
+                        // character-parsing method below will grab the
+                        // destination vertex as it encounters it
+                        _inEdge = true;
+                        // The weight of the edge is given by the "cost"
+                        // attribute
+                        _edgeWeight = (int) Double.parseDouble(attributes.getValue("cost"));
+                        break;
+
+                    default: // ignore any other opening tag
+                }
+            }
+
+
+            /**
+             * Parser has seen a closing tag.
+             *
+             * For a <pre>vertex</pre> tag we increment the vertex number
+             * to keep track of which vertex we're parsing.
+             * For a <pre>edge</pre> tag we use the number of the edge and
+             * the weight we saw in the opening tag to add an edge to the
+             * graph.
+             *
+             * {@inheritDoc}
+             */
+            @Override
+            public void endElement(String uri, String localName,
+                                   String qName) throws SAXException {
+
+                // Again, we only care about vertex and edge tags
+                switch (qName) {
+
+                    case "vertex":
+                        // End of a vertex so we're moving on to the next
+                        // source vertex number
+                        _sourceVertexNumber++;
+                        // Clear out the name so we don't inherit it in some
+                        // mal-formed entry later
+                        _sourceVertexName = null;
+                        break;
+
+                    case "edge":
+                        // We've finished an edge so we have collected all the
+                        // information needed to add an edge to the graph
+                        _inEdge = false;
+                        // If this is the first set of edges (i.e., we're on
+                        // the first source vertex) then this is the first
+                        // time we've seen the destination vertex; add it to
+                        // the graph
+                        if (_sourceVertexNumber == 0) {
+                            _theGraph.addVertex(_destinationVertexName);
+                        }
+                        // Should now be safe to add an edge between the
+                        // source and destination
+                        _theGraph.addEdge(_sourceVertexName,
+                                _destinationVertexName, _edgeWeight);
+                        // Clear out the attributes of this edge so we don't
+                        // accidentally inherit them should we parse a
+                        // mal-formed edge entry later
+                        _destinationVertexName = null;
+                        _edgeWeight = NO_WEIGHT;
+                        break;
+
+                    default: // ignore any other closing tag
+                }
+            }
+
+
+            /**
+             * Parser has seen a string of characters between opening and
+             * closing tag. The only characters we care about occur within
+             * an <pre>edge</pre> tag and are the destination vertex.
+             *
+             * {@inheritDoc}
+             */
+            @Override
+            public void characters(char[] ch, int start, int length) throws SAXException {
+                // If we're within an edge, then this string of characters
+                // is the number of the destination vertex for this edge.
+                // Remember the destination vertex
+                if (_inEdge) {
+                    _destinationVertexName = new String(ch, start, length);
+                }
+            }
+
+
+            /**
+             * @return the graph constructed
+             */
+            Graph<String> getGraph() {
+                return _theGraph;
+            }
+
+        } // TSPHandler
+
+
+        // Create a handler and use it for parsing
+        TSPGraphHandler tspHandler = new TSPGraphHandler();
+
+        // Here's where we do the actual parsing using the local class
+        // defined above. Give the parser an instance of the class above
+        // as the handler and parse away!
+        SAXParserFactory.newInstance().newSAXParser().parse(inputFile, tspHandler);
+
+        // Graph should now be populated, return it
+        return tspHandler.getGraph();
+
+    } // fromTSPFile
 
 
     /**
@@ -707,10 +1065,9 @@ public class Graph<T> {
          * weight, zero if they are equal, positive if the other's is less
          */
         public int compareTo(Edge<E> otherEdge) {
-            if (otherEdge == null) {
-                throw new NullPointerException();
-            }
-
+            // this will throw null pointer exception if a null is given for
+            // otherEdge. This is specified in the compareTo spec in the java
+            // documentation.
             return (_weight - otherEdge._weight);
         }
     }

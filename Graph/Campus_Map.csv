@@ -1,0 +1,201 @@
+67
+Amphitheater
+Anderson House
+Armstrong House
+Austin Sports Complex
+Barclay House
+Beebe Residence Hall
+Behavioral Health Clinic (Wright House)
+Brandt Residence Hall
+Brougher Hall
+Campbell House
+Canyon Commons
+Carey Residence Hall
+Center Street House
+Chapman House
+Costume Shop
+Crisman Crossing
+Duke Athletic Center
+Stevens Center
+Edwards Residence Hall
+Edwards-Holman Science Center & Wood-Mar Hall
+Fell House
+Finance
+Fire Pit/ Pavillion
+Fry House
+Fulton Street House
+Gulley Residence Hall
+Hancock Street House
+Health and Counseling Center (Woodward House)
+Hiebert House
+Hobson-Macy-Sutton Residence Hall Complex
+Hoover Academic Building
+Hoskins House
+Intercultural Life/ Study Abroad
+Kelsey House
+Klages Center
+Le Shana Residence Hall
+Lemmons Center
+Lewis Apartments
+Meridian Street House
+Minthorn Hall
+Morse Athletic Fields
+Murdock Learning Resource Center (Library)
+Newlin Apartments
+North Street Annex
+Pennington House
+Pennington Residence Hall
+Plant Services
+Prayer Chapel
+Riley House
+River Street House (Marketing and Communications)
+Roberts Center
+Ross Center
+Security Services
+Senior Art Studio (Hester House)
+Sheridan Street House (Spiritual Life)
+Stoffer Family Stadium & Lemmons Family Field
+Student Activity Center
+Tennis Courts
+Venn-Diagram
+Weesner House
+Weesner Village
+West Offices/ HR/ Advancement
+Wheeler Bridge
+Wheeler Sports Center
+Willcuts Residence Hall
+Winters Apartments
+Woolman Apartments
+132
+West Offices/ HR/ Advancement,Sheridan Street House (Spiritual Life),118
+Sheridan Street House (Spiritual Life),Meridian Street House,201
+Sheridan Street House (Spiritual Life),Armstrong House,330
+Armstrong House,Anderson House,66
+Armstrong House,Pennington House,159
+Pennington House,Finance,213
+Pennington House,Winters Apartments,345
+Finance,Winters Apartments,273
+Finance,Hoskins House,87
+Hoskins House,Intercultural Life/ Study Abroad,120
+Hoskins House,Senior Art Studio (Hester House),63
+Winters Apartments,Health and Counseling Center (Woodward House),130
+Senior Art Studio (Hester House),Health and Counseling Center (Woodward House),75
+Intercultural Life/ Study Abroad,Fry House,270
+Fry House,Hiebert House,127
+Hiebert House,Weesner House,310
+Weesner House,Fell House,211
+Weesner House,Riley House,218
+Fell House,Riley House,33
+Riley House,Chapman House,169
+Chapman House,Woolman Apartments,90
+Woolman Apartments,Hancock Street House,80
+Hancock Street House,Health and Counseling Center (Woodward House),289
+Sheridan Street House (Spiritual Life),Security Services,393
+West Offices/ HR/ Advancement,Security Services,423
+Stevens Center,Security Services,370
+Stevens Center,River Street House (Marketing and Communications),200
+Pennington Residence Hall,River Street House (Marketing and Communications),273
+Stevens Center,Pennington Residence Hall,153
+Security Services,Hoover Academic Building,270
+Pennington House,River Street House (Marketing and Communications),342
+Finance,River Street House (Marketing and Communications),120
+Klages Center,Pennington Residence Hall,281
+Weesner Village,Pennington Residence Hall,363
+Weesner Village,Beebe Residence Hall,168
+Willcuts Residence Hall,Beebe Residence Hall,15
+Willcuts Residence Hall,Hiebert House,277
+Fire Pit/ Pavillion,Fell House,971
+Hobson-Macy-Sutton Residence Hall Complex,Fell House,1046
+Fire Pit/ Pavillion,Hobson-Macy-Sutton Residence Hall Complex,233
+Fire Pit/ Pavillion,Carey Residence Hall,244
+Carey Residence Hall,Willcuts Residence Hall,130
+Carey Residence Hall,Beebe Residence Hall,40
+Prayer Chapel,Beebe Residence Hall,210
+Fire Pit/ Pavillion,Prayer Chapel,401
+Weesner Village,Prayer Chapel,50
+Edwards Residence Hall,Prayer Chapel,206
+Klages Center,Edwards Residence Hall,88
+Crisman Crossing,Edwards Residence Hall,296
+Klages Center,Crisman Crossing,290
+Murdock Learning Resource Center (Library),Edwards Residence Hall,310
+Klages Center,Murdock Learning Resource Center (Library),147
+Stevens Center,Klages Center,440
+Stevens Center,Hoover Academic Building,202
+Klages Center,Hoover Academic Building,374
+Klages Center,Venn-Diagram,230
+Murdock Learning Resource Center (Library),Venn-Diagram,223
+Murdock Learning Resource Center (Library),Minthorn Hall,191
+Minthorn Hall,Venn-Diagram,202
+Brougher Hall,Venn-Diagram,264
+Lemmons Center,Venn-Diagram,309
+Edwards-Holman Science Center & Wood-Mar Hall,Venn-Diagram,141
+Venn-Diagram,Hoover Academic Building,218
+Edwards-Holman Science Center & Wood-Mar Hall,Hoover Academic Building,188
+Lemmons Center,Edwards-Holman Science Center & Wood-Mar Hall,90
+Lemmons Center,Brougher Hall,227
+Minthorn Hall,Brougher Hall,213
+Minthorn Hall,North Street Annex,39
+North Street Annex,Brougher Hall,225
+North Street Annex,Ross Center,159
+Ross Center,Brougher Hall,207
+Lemmons Center,Ross Center,276
+Lemmons Center,Newlin Apartments,176
+Lemmons Center,Center Street House,129
+Security Services,Campbell House,1003
+Campbell House,Center Street House,506
+Campbell House,Costume Shop,283
+Fulton Street House,Costume Shop,412
+Kelsey House,Costume Shop,209
+Kelsey House,Center Street House,275
+Kelsey House,Newlin Apartments,127
+Newlin Apartments,Ross Center,208
+Duke Athletic Center,Ross Center,408
+Fulton Street House,Duke Athletic Center,261
+Stoffer Family Stadium & Lemmons Family Field,Duke Athletic Center,72
+Stoffer Family Stadium & Lemmons Family Field,Ross Center,180
+Stoffer Family Stadium & Lemmons Family Field,Amphitheater,158
+Wheeler Sports Center,Amphitheater,330
+North Street Annex,Stoffer Family Stadium & Lemmons Family Field,75
+Minthorn Hall,Tennis Courts,146
+North Street Annex,Tennis Courts,357
+Murdock Learning Resource Center (Library),Tennis Courts,455
+Edwards Residence Hall,Tennis Courts,314
+Crisman Crossing,Tennis Courts,355
+Tennis Courts,Amphitheater,329
+Tennis Courts,Stoffer Family Stadium & Lemmons Family Field,25
+Barclay House,Amphitheater,328
+Wheeler Sports Center,Wheeler Bridge,141
+Morse Athletic Fields,Wheeler Bridge,415
+Wheeler Sports Center,Morse Athletic Fields,689
+Plant Services,Morse Athletic Fields,329
+Plant Services,Austin Sports Complex,3834
+Fulton Street House,Austin Sports Complex,3828
+Le Shana Residence Hall,Wheeler Bridge,140
+Le Shana Residence Hall,Amphitheater,480
+Gulley Residence Hall,Barclay House,130
+Le Shana Residence Hall,Barclay House,175
+Le Shana Residence Hall,Gulley Residence Hall,83
+Le Shana Residence Hall,Brandt Residence Hall,295
+Brandt Residence Hall,Gulley Residence Hall,285
+Canyon Commons,Gulley Residence Hall,198
+Roberts Center,Gulley Residence Hall,600
+Brandt Residence Hall,Roberts Center,350
+Brandt Residence Hall,Behavioral Health Clinic (Wright House),380
+Behavioral Health Clinic (Wright House),Roberts Center,200
+Canyon Commons,Roberts Center,514
+Lewis Apartments,Roberts Center,126
+Student Activity Center,Roberts Center,202
+Canyon Commons,Student Activity Center,124
+Crisman Crossing,Student Activity Center,223
+Crisman Crossing,Canyon Commons,177
+Hobson-Macy-Sutton Residence Hall Complex,Student Activity Center,195
+Hobson-Macy-Sutton Residence Hall Complex,Lewis Apartments,117
+Student Activity Center,Lewis Apartments,143
+Stoffer Family Stadium & Lemmons Family Field,Wheeler Sports Center,270
+Senior Art Studio (Hester House),Finance,170
+Pennington Residence Hall,Intercultural Life/ Study Abroad,580
+Fry House,Pennington Residence Hall,420
+Weesner Village,Klages Center,205
+Weesner Village,Edwards Residence Hall,70
+Weesner Village,Hiebert House,310
+Fry House,Weesner Village,370
